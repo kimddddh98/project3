@@ -1,0 +1,50 @@
+@charset "utf-8";
+#wrap{
+    width: 100%;
+}
+header{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: #fff;
+    align-items: center;
+}
+header ul{
+    display: flex;
+}
+header>ul>li{
+    padding: 0 20px;
+}
+#sound{
+    width: 100%;
+    background-color: aqua;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* display: flex; */
+    /* align-items: flex-end; */
+
+}
+#sound_box{
+    /* margin-top: 100px; */
+    width: 100%;
+    /* background-color: black; */
+    height: 20%;
+    position: absolute;
+    bottom: -50px;
+    opacity: 0.5;
+    display: flex;
+    justify-content: space-between;
+}
+#sound_text{
+    width: 60%;
+    background-color: bisque;
+}
+#sound_index{
+    width: 10%;
+    background-color: bisque;
+}
