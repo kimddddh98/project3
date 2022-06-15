@@ -7,7 +7,28 @@
     <title>music</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('.fadein:even').css('background','red')
+            $('.fadein:odd').css('background','blue')
+            $('#container_m>div').on('click',function(){
+                var index=$(this).index()
+                $('.fadein').css('display','none');
+                $('.fadein').eq(index).slideDown(1000)
+            })
+            $('#sound_text>div').hover(function(){
+                $(this).stop().animate({width:100+'%'})
+            },function(){
+                $(this).stop().animate({width:85+'%'})
 
+            })
+            $('#full>div').mouseover(function(){
+                $(this).css('opacity','1')
+                $(this).siblings().css('opacity','0.8')
+            })
+        });
+    </script>
 </head>
 <body>
     <div id="wrap">
@@ -23,13 +44,64 @@
             <div id="search">a</div>
         </header>
       
-    </div>
-    <div id="sound">
-        <div id="sound_box">
-            <div id="sound_text"></div>
-            <div id="sound_index"></div>
+        <div id="sound">
+            <div id="control">
+                <div><img src="img/main/careers-arrow (1).svg" alt=""></div>
+                <div><img id='next'src="img/main/careers-arrow.svg" alt=""></div>
+            </div>
+            <div id="sound_box">
+                <div id="sound_text">
+                    <div>
+                        <p>
+                       MORAESIGYE-CHANGMO
+                        </p>
+                        <p>
+                        -UNDERGROUND ROCKSTAR
+                        </p>
+                    </div>
+                </div>
+                <div id="sound_index">
+                    <div><span>1</span>/<span>2</span></div>
+                </div>
+            </div>
         </div>
+        <div id="full">
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+        <div id="container">
+            <div id="container_m">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+            </div>
+            <div id="container_c">
+                <div class="fadein"></div>
+                <div class="fadein"></div>
+                <div class="fadein"></div>
+                <div class="fadein"></div>
+            </div>
+        </div>
+        <div id="story">
+            <h3>asd</h3>
+            <div id="story_con">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <!-- <script>
+            var con=document.querySelector('#container_m>div')
+            var fade=document.querySelector('.fadein');
+            for(var i=0;i<fade.length;i++){
+                
+            }
+        </script> -->
+  
     </div>
+   
 
 </body>
 </html>
