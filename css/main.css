@@ -29,7 +29,7 @@ header>ul>li{
     /* background-color: aqua; */
     height: 900px;
     position: relative;
-    background-image: url(/img/main/test.jpg);
+    background-image: url(../img/main/test.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -108,7 +108,7 @@ header>ul>li{
 #full>div{
     background-color: chartreuse;
     width: 100%;
-    background-image: url(/img/main/cover.jpg);
+    background-image: url(../img/main/cover.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
