@@ -10,9 +10,10 @@ header{
     display: flex;
     justify-content: space-between;
     background-color: black;
+    opacity: 0.8;
     color: #fff;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
@@ -69,12 +70,12 @@ header>ul>li{
 }
 #sound_text{
     width: 60%;
-    background-color: rgba(18, 18, 18,0.5);
+    background-color: rgba(250, 250, 250, 0.2);
     display: flex;
 }
 #sound_text>div{
     width: 85%;
-    background-color: #121212;
+    background-color: rgba(18, 18, 18,0.7);
 }
 #sound_text p{
     color: rgba(255, 255, 255,0.87);
@@ -104,16 +105,30 @@ header>ul>li{
     width: 100%;
     height: 800px;
     display: flex;
+    background-color: #121212;
 }
 #full>div{
     background-color: chartreuse;
     width: 100%;
-    background-image: url(../img/main/cover.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     opacity: 0.8;
+    filter: grayscale(50%);
+    transition: 0.5s;
     
+}
+#full>div:nth-of-type(1){
+    background-image: url(../img/main/cover.jpg);
+
+}
+#full>div:nth-of-type(2){
+    background-image: url(../img/main/cover1.jpg);
+
+}
+#full>div:nth-of-type(3){
+    background-image: url(../img/main/cover2.jpg);
+
 }
 #container{
     margin-top: 50px;
@@ -152,22 +167,88 @@ header>ul>li{
 
 #story{
     width: 100%;
-    height: 800px;
+    height: 1000px;
     text-align: center;
 }
 #story_con{
     width: 1300px;
     height: 100%;
     margin: 0 auto;
-    background-color: aqua;
     display: flex;
+    justify-content: space-between;
 }
 
 #story_con>div:first-of-type{
-    width: 40%;
-    background-color: red;
+    width: 39.5%;
 }
 #story_con>div:nth-of-type(2){
+    width: 59.5%;
+}
+.con_one{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.con_two{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+#story_con>div>div{
+    border: 1px solid #fff;
+}
+.con_one>.first{
+    width: 100%;
+    height: 55%;
+}
+.con_one>.second{
+    height: 30%;
+    width: 55%;
+}
+.con_two>.first{
+    width: 100%;
+    height: 35%;
+}
+.con_two>.second{
     width: 60%;
-    background-color: blue;
+    height: 50%;
+
+}
+
+#bgbox{
+    width: 100%;
+    height: 1000px;
+    background-color: #121212;
+    display: flex;
+    /* background-image: url(../img/main/Visiwig-Chevrons.svg); */
+    /* background-attachment: fixed; */
+    /* opacity: 0.5; */
+    position: relative;
+}
+
+
+footer{
+    width: 100%;
+    height: 320px;
+    background-color: #121212;
+}
+footer>div{
+    width: 1300px;
+    height: 100%;
+    background-color: grey;
+    margin: 0 auto;
+}
+svg path{
+    opacity: 0.4;
+}
+svg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99;
+    width: 100%;
+    height: 100%;
 }
