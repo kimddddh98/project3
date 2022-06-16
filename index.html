@@ -17,14 +17,15 @@
             }
         $(function(){
             ani();
-            setInterval(ani,12000)
-            $('.fadein:even').css('background','red')
-            $('.fadein:odd').css('background','blue')
+            setInterval(ani,18000)
             $('#container_m>div').on('click',function(){
                 var index=$(this).index()
                 $('.fadein').css('display','none');
-                $('.fadein').eq(index).slideDown(1000)
+                $('.fadein').eq(index).slideDown(1000).css('display','flex')
+                $(this).css('background','rgba(16,16,16,0.8)').
+                siblings().css('background','rgba(250,250,250,0.2)')
             })
+            .eq(0).css('background','rgba(16,16,16,0.8)')
             $('#sound_text>div').hover(function(){
                 $(this).stop().animate({width:100+'%'})
             },function(){
@@ -42,14 +43,21 @@
                 })
             })
             $(window).scroll(function(){
-                var c=$('#sound_text').offset().top()
-                if(e>c){
-                    $('header').css('background','#fff')
+                var c=$('#sound_text').offset()
+                c.top
+                var e=$(window).scrollTop()
+                if(e>c.top){
+                    $('header').css({
+                        opacity:1
+
+                    })
+                }
+                else{
+                    $('header').css({
+                        opacity:0.8
+                    })
                 }
             })
-       
-            
-            
         });
         
     </script>
@@ -59,11 +67,11 @@
         <header>
             <div id="logo">a</div>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
+                <li>인기차트</li>
+                <li>최신음악</li>
+                <li>장르음악</li>
+                <li>매거진</li>
+                <li>TV</li>
             </ul>
             <div id="search">a</div>
         </header>
@@ -77,10 +85,10 @@
                 <div id="sound_text">
                     <div>
                         <p>
-                       MORAESIGYE-CHANGMO
+                       title-artist()
                         </p>
                         <p>
-                        -UNDERGROUND ROCKSTAR
+                        -album title
                         </p>
                     </div>
                 </div>
@@ -97,16 +105,41 @@
         </div>
         <div id="container">
             <div id="container_m">
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
+                <div><p>실시간 차트</p></div>
+                <div><p>일간 차트</p></div>
+                <div><p>주간 차트</p></div>
+                <div><p>월간 차트</p></div>
             </div>
             <div id="container_c">
-                <div class="fadein"></div>
-                <div class="fadein"></div>
-                <div class="fadein"></div>
-                <div class="fadein"></div>
+                <div class="fadein">
+                    <div></div>
+                    <div class="chart">
+                        <p>
+                            <span>2022</span>.
+                            <span>06</span>.
+                            <span>16</span>.
+                            <span>17:00</span>
+                        
+                        </p>
+                    </div>
+                </div>
+                <div class="fadein">
+                    <div></div>
+                    <div class="chart">
+                        <p>2022.06.16 17:00</p>
+                    </div>
+
+                </div>
+                <div class="fadein">
+                    <div></div>
+                    <div></div>
+
+                </div>
+                <div class="fadein">
+                    <div></div>
+                    <div></div>
+
+                </div>
             </div>
         </div>
         <div id="story">
@@ -132,7 +165,7 @@
         
        
         <footer>
-            <div></div>
+            <div>footer</div>
         </footer>
         <svg id="svg" class="stroke" style="background-color:#121212;">
             <path  stroke="#bf611b" d="M -0 915 L -1 0 C 16.3 0, 146.7 -129, 163 -129 C 179.3 -129, 309.7 129, 326 129 C 342.3 129, 472.7 -129, 489 -129 C 505.3 -129, 635.7 129, 652 129 C 668.3 129, 798.7 -129, 815 -129 C 831.3 -129, 961.7 129, 978 129 C 994.3 129, 1124.7 -129, 1141 -129 C 1157.3 -129, 1287.7 129, 1304 129 C 1320.3 129, 1450.7 -129, 1467 -129 C 1483.3 -129, 1613.7 129, 1630 129 C 1646.3 129, 1776.7 -129, 1793 -129 C 1809.3 -129, 1939.7 129, 1956 129 "></path>
