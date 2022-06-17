@@ -9,15 +9,27 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <script>
-        function ani(){
-                for(var i=0;i<$('path').length;i++){
-                    $('path').delay(1000).eq(i).animate({opacity:1},1000)
-                    .animate({opacity:0.4},1000)
+        window.onload = function () {
+                function ani() {
+                    for (var i = 0; i < $('path').length; i++) {
+                        $('path').delay(1000).eq(i).animate({ opacity: 1 }, 1000)
+                            .animate({ opacity: 0.4 }, 1000)
+                    }
                 }
+                ani();
+                setInterval(ani, 18000)
+           
+
+
             }
         $(function(){
-            ani();
-            setInterval(ani,18000)
+            for(var i=1;i<6;i++){
+            $('.slider>ul>li').removeClass('item'+i)
+
+            }
+            $('.slider>ul>li').addClass('item3');
+            $('.item3').eq(2).css('z-index','4')
+         
             $('#container_m>div').on('click',function(){
                 var index=$(this).index()
                 $('.fadein').css('display','none');
@@ -42,11 +54,51 @@
                     filter: 'grayscale(50%)'
                 })
             })
+                
+
+                $('.next').click(function () {
+                        // $('.item'+4).addClass('item'+5).removeClass('item'+4);
+                        // $('.item'+3).addClass('item'+4).removeClass('item'+3);
+                        // $('.item'+2).addClass('item'+3).removeClass('item'+2).css('top','50%');
+
+                        // $('.item'+1).addClass('item'+2).removeClass('item'+1)
+                        // $('.item'+5).addClass('item'+1).removeClass('item'+5);
+                        
+                        $('.item5').addClass('item1',function(){
+                            $(this).removeClass('item5')
+                        })
+                        $('.item4').addClass('item5',function(){
+                            $(this).removeClass('item4')
+                        })
+                        $('.item3').addClass('item4',function(){
+                            $(this).removeClass('item')
+                        })
+                        $('.item2').addClass('item3',function(){
+                            $(this).removeClass('item2');
+                            $('.item3').css('top','50%')
+                        })
+                        $('.item1').addClass('item2',function(){
+                            $(this).removeClass('item1')
+                        })
+                        
+                    })
+
+
+
             $(window).scroll(function(){
                 var c=$('#sound_text').offset()
-                c.top
                 var e=$(window).scrollTop()
-                if(e>c.top){
+                var chart=$('#container_c').offset()
+                
+                if(e>chart.top-500){
+                    $('.slider>ul>li').removeClass('item3');
+                    for(var i=0;i<5;i++){
+                    $('.slider>ul>li').eq(i).addClass('item'+(i+1))
+                    }
+                    $('.item3').css('top','50%');
+
+                }
+                else if(e>c.top){
                     $('header').css({
                         opacity:1
 
@@ -58,6 +110,8 @@
                     })
                 }
             })
+
+           
         });
         
     </script>
@@ -112,7 +166,34 @@
             </div>
             <div id="container_c">
                 <div class="fadein">
-                    <div></div>
+                        <div class="slider">
+                            <ul>
+                              <li class="item1">
+                                
+                                <p class="txt">안녕하세요1</p>
+                              </li>
+                              <li class="item2">
+                                <img src="img/main/cover2.jpg" alt="">
+                                
+                                <p class="txt">안녕하세요2</p>
+                              </li>
+                              <li class="item3">
+                                <img src="img/main/cover1.jpg" alt="">
+                                
+                                <p class="txt">안녕하세요3</p>
+                              </li>
+                              <li class="item4">
+                                4
+                                <p class="txt">안녕하세요4</p>
+                              </li>
+                              <li class="item5">
+                                5
+                                <p class="txt">안녕하세요5</p>
+                              </li>
+                            </ul>
+                            <button type="button" class="prev">이전</button>
+                            <button type="button" class="next">다음</button>
+                        </div>
                     <div class="chart">
                         <p>
                             <span>2022</span>.
@@ -142,6 +223,24 @@
                 </div>
             </div>
         </div>
+       <!-- <script>
+        var $eles = $('.slider>ul>li');
+                var eles = $eles.toArray()
+
+                var pt = [];
+                var total = eles.length;
+
+                var center = Math.floor(total / 2)
+                var repeat = 1, count = 0;
+                setCss();
+                function setCss() {
+                    eles.forEach(function (e, i) {
+                        pt[i] = $(e).css(['top', 'height', 'left', 'z-index','width'])
+                        
+
+                    })
+                }
+       </script> -->
         <div id="story">
             <h3>asd</h3>
             <div id="story_con">
