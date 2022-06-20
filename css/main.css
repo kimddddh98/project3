@@ -3,6 +3,7 @@
 #wrap{
     width: 100%;
     position: relative;
+
 }
 header{
     height: 120px;
@@ -30,7 +31,7 @@ header>ul>li{
     /* background-color: aqua; */
     height: 900px;
     position: relative;
-    background-image: url(../img/main/test.jpg);
+    /* background-image: url(../img/main/test.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -81,6 +82,8 @@ header>ul>li{
     color: rgba(255, 255, 255,0.87);
     width: 100%;
     text-align: center;
+    /* height: 50%; */
+    padding: 20px 0;
 }
 #sound_text>div>p:first-of-type{
     font-size: 50px;
@@ -107,6 +110,26 @@ header>ul>li{
     display: flex;
     background-color: #121212;
 }
+#full>div>div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 2px solid #fff;
+    transform: translate(-50%,-50%) rotate3d(0,0,1,-45deg);
+    transition: 0.5s;
+    opacity: 0;
+}
+#full p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: 0.5s;
+    font-size: 25px;
+}
 #full>div{
     background-color: chartreuse;
     width: 100%;
@@ -116,7 +139,8 @@ header>ul>li{
     opacity: 0.8;
     filter: grayscale(50%);
     transition: 0.5s;
-    
+    position: relative;
+    cursor: pointer;
 }
 #full>div:nth-of-type(1){
     background-image: url(../img/main/cover.jpg);
@@ -141,8 +165,6 @@ header>ul>li{
 #container_m{
     height: 15%;
     display: flex;
-
-
 }
 #container_m>div{
     width: 25%;
@@ -151,13 +173,11 @@ header>ul>li{
     display: flex;
     align-items: center;
     background-color: rgba(250, 250, 250, 0.2);
-
 }
 #container_m p{
     width: 100%;
     text-align: center;
 }
-
 #container_c{
     height: 85%;
     /* background-color: aqua; */
@@ -183,6 +203,15 @@ header>ul>li{
 .fadein:not(:first-of-type){
     display: none;
 }
+.chart>p{
+    width: 100%;
+    text-align: center;
+}
+.chart table{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
 .slider{
     width: 100%;
     height: 100%;
@@ -202,7 +231,6 @@ header>ul>li{
 .slider ul li img{
     width: 100%;
 }
-
 .item1{
     top: 50%;
     width: 150px;
@@ -221,20 +249,15 @@ header>ul>li{
     background-color: red;
     z-index: 2;
     transform: translate(-10%,-50%);
-
-
-
 }
 .item3{
     width: 400px;
     height: 400px;
-
     top: 80%;
     left: 50%;
     background-color: pink;
     z-index: 3;
     transform: translate(-50%,-50%);
-
 }
 .item4{
     top: 50%;
@@ -244,8 +267,6 @@ header>ul>li{
     background-color: blue;
     z-index: 2;
     transform: translate(-90%,-50%);
-
-
 }
 .item5{
     width: 150px;
@@ -255,22 +276,21 @@ header>ul>li{
     background-color:chocolate;
     z-index: 1;
     transform: translate(-110%,-50%);
-    
 }
 .slider .txt{
     position: absolute;
     bottom: 0;
     width: 100%;
+    padding: 10px 0;
     text-align: center;
-    background-color: tomato;
+    background-color: rgba(250, 250, 250, 0.2);
 }
-
-
 
 #story{
     width: 100%;
     height: 1000px;
     text-align: center;
+    margin-top: 100px;
 }
 #story_con{
     width: 1300px;
@@ -279,7 +299,10 @@ header>ul>li{
     display: flex;
     justify-content: space-between;
 }
-
+#story_con img{
+    width: 100%;
+    height: 100%;
+}
 #story_con>div:first-of-type{
     width: 39.5%;
 }
@@ -296,8 +319,6 @@ header>ul>li{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
-
 }
 #story_con>div>div{
     border: 1px solid #fff;
@@ -317,7 +338,7 @@ header>ul>li{
 .con_two>.second{
     width: 60%;
     height: 50%;
-
+    align-self: center;
 }
 
 #bgbox{
