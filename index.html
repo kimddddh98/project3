@@ -41,6 +41,8 @@
                 $(this).stop().animate({width:85+'%'})
 
             })
+
+            // #full 호버효과ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
             $('#full>div').mouseover(function(){
                 $(this).siblings().children('div').css({width:0,height:0})
                 $(this).css({
@@ -56,13 +58,37 @@
                 })
                 .end().siblings().children().css({opacity:0})
             })
+
+            // 차트 슬라이드,ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
             $('.next').click(function () {
-                      
-                        
-                    })
+                var x=$('.next').index(this)
+                $('.slider').eq(x).find('li:first').appendTo($('.slider').eq(x).find('ul'))
+
+                for (var i = 1; i <= $('.slider').eq(x).find('li').length; i++) {
+                    $('.slider').eq(x).find('.item' + i).removeClass('item' + i)
+                    $('.slider').eq(x).find('li').eq(i - 1).toggleClass('item' + i)
+                    if (i == 2) {
+                        $('.slider').eq(x).find('li').eq(i).css('top', '50%')
+                    }
+                }
+            })
+            $('.prev').click(function () {
+                var y=$('.prev').index(this)
+                $('.slider').eq(y).find('li:last').prependTo($('.slider').eq(y).find('ul'))
+
+                for (var i = 1; i <= $('.slider').eq(y).find('li').length; i++) {
+                    $('.slider').eq(y).find('.item' + i).removeClass('item' + i)
+                    $('.slider').eq(y).find('li').eq(i - 1).toggleClass('item' + i)
+                    if (i == 2) {
+                        $('.slider').eq(y).find('li').eq(i).css('top', '50%')
+                    }
+                }
+            })
+            // table 복제ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
             $('.table').appendTo('.chart')
 
 
+            // 스크롤이벤트ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
             $(window).scroll(function(){
                 var c=$('#sound_text').offset()
                 var e=$(window).scrollTop()
@@ -79,7 +105,6 @@
                 else if(e>c.top){
                     $('header').css({
                         opacity:1
-
                     })
                 }
                 else{
@@ -159,30 +184,32 @@
             <div id="container_c">
                 <div class="fadein">
                         <div class="slider">
-                            <ul>
-                              <li class="item1">
-                                
-                                <p class="txt">title1</p>
-                              </li>
-                              <li class="item2">
-                                <img src="img/main/cover2.jpg" alt="">
-                                
-                                <p class="txt">title2</p>
-                              </li>
-                              <li class="item3">
-                                <img src="img/main/cover1.jpg" alt="">
-                                
-                                <p class="txt">title3</p>
-                              </li>
-                              <li class="item4">
-                                4
-                                <p class="txt">title4</p>
-                              </li>
-                              <li class="item5">
-                                5
-                                <p class="txt">title5</p>
-                              </li>
-                            </ul>
+                            <div class="sc">
+                                <ul>
+                                    <li class="item1">
+                                      <img src="img/main/chart4.jpg" alt="">
+                                      <p class="txt">title1</p>
+                                    </li>
+                                    <li class="item2">
+                                      <img src="img/main/chart5.jpg" alt="">
+                                      
+                                      <p class="txt">title2</p>
+                                    </li>
+                                    <li class="item3">
+                                      <img src="img/main/chart1.jpg" alt="">
+                                      
+                                      <p class="txt">title3</p>
+                                    </li>
+                                    <li class="item4">
+                                      <img src="img/main/chart2.jpg" alt="">
+                                      <p class="txt">title4</p>
+                                    </li>
+                                    <li class="item5">
+                                      <img src="img/main/chart3.jpg" alt="">
+                                      <p class="txt">title5</p>
+                                    </li>
+                                  </ul>
+                            </div>
                             <button type="button" class="prev">이전</button>
                             <button type="button" class="next">다음</button>
                         </div>
@@ -198,7 +225,7 @@
                             <thead>
                                 <tr>
                                     <th>순위</th>
-                                    <th>제목</th>
+                                    <th colspan = "2" style="width: 40%;" >제목</th>
                                     <th>아티스트</th>
                                     <th>앨범</th>
                                 </tr>
@@ -206,60 +233,79 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
+                                    <td><img src="img/main/chart1.jpg" alt=""></td>
                                     <td>ㅁㅁㅁ</td>
                                     <td>ㅇㅇㅇ</td>
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
+                                    <td><img src="img/main/chart2.jpg" alt=""></td>
+
                                     <td>ㅁㅁㅁ</td>
                                     <td>ㅇㅇㅇ</td>
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
+                                    <td><img src="img/main/chart3.jpg" alt=""></td>
+
                                     <td>ㅁㅁㅁ</td>
                                     <td>ㅇㅇㅇ</td>
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
+                                    <td><img src="img/main/chart4.jpg" alt=""></td>
+
                                     <td>ㅁㅁㅁ</td>
                                     <td>ㅇㅇㅇ</td>
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
+                                    <td><img src="img/main/chart5.jpg" alt=""></td>
+
                                     <td>ㅁㅁㅁ</td>
                                     <td>ㅇㅇㅇ</td>
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
+                                    <td><img src="img/main/chart6.jpg" alt=""></td>
+
                                     <td>ㅁㅁㅁ</td>
                                     <td>ㅇㅇㅇ</td>
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
+                                    <td><img src="img/main/chart7.jpg" alt=""></td>
+
                                     <td>ㅁㅁㅁ</td>
                                     <td>ㅇㅇㅇ</td>
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
+                                    <td><img src="img/main/chart8.jpg" alt=""></td>
+
                                     <td>ㅁㅁㅁ</td>
                                     <td>ㅇㅇㅇ</td>
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
+                                    <td><img src="img/main/chart9.jpg" alt=""></td>
+
                                     <td>ㅁㅁㅁ</td>
                                     <td>ㅇㅇㅇ</td>
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
+                                    <td><img src="img/main/chart10.jpg" alt=""></td>
+
                                     <td>ㅁㅁㅁ</td>
                                     <td>ㅇㅇㅇ</td>
                                     <td>ㅇㅇㅇ</td>
@@ -270,7 +316,36 @@
                     </div>
                 </div>
                 <div class="fadein">
-                    <div></div>
+                    <div class="slider">
+                        <div class="sc">
+                            <ul>
+                                <li class="item1">
+                                  <img src="img/main/cover.jpg" alt="">
+                                  <p class="txt">title1</p>
+                                </li>
+                                <li class="item2">
+                                  <img src="img/main/cover2.jpg" alt="">
+                                  
+                                  <p class="txt">title2</p>
+                                </li>
+                                <li class="item3">
+                                  <img src="img/main/cover1.jpg" alt="">
+                                  
+                                  <p class="txt">title3</p>
+                                </li>
+                                <li class="item4">
+                                  <img src="img/main/theme4.jpg" alt="">
+                                  <p class="txt">title4</p>
+                                </li>
+                                <li class="item5">
+                                  <img src="img/main/cover3.jpg" alt="">
+                                  <p class="txt">title5</p>
+                                </li>
+                              </ul>
+                        </div>
+                        <button type="button" class="prev">이전</button>
+                        <button type="button" class="next">다음</button>
+                    </div>
                     <div class="chart">
                         <p>
                             <span class="year">2022</span>.
@@ -282,12 +357,70 @@
 
                 </div>
                 <div class="fadein">
-                    <div></div>
+                    <div class="slider">
+                        <div class="sc">
+                            <ul>
+                                <li class="item1">
+                                  <img src="img/main/cover.jpg" alt="">
+                                  <p class="txt">title1</p>
+                                </li>
+                                <li class="item2">
+                                  <img src="img/main/cover2.jpg" alt="">
+                                  
+                                  <p class="txt">title2</p>
+                                </li>
+                                <li class="item3">
+                                  <img src="img/main/cover1.jpg" alt="">
+                                  
+                                  <p class="txt">title3</p>
+                                </li>
+                                <li class="item4">
+                                  <img src="img/main/theme4.jpg" alt="">
+                                  <p class="txt">title4</p>
+                                </li>
+                                <li class="item5">
+                                  <img src="img/main/cover3.jpg" alt="">
+                                  <p class="txt">title5</p>
+                                </li>
+                              </ul>
+                        </div>
+                        <button type="button" class="prev">이전</button>
+                        <button type="button" class="next">다음</button>
+                    </div>
                     <div></div>
 
                 </div>
                 <div class="fadein">
-                    <div></div>
+                    <div class="slider">
+                        <div class="sc">
+                            <ul>
+                                <li class="item1">
+                                  <img src="img/main/cover.jpg" alt="">
+                                  <p class="txt">title1</p>
+                                </li>
+                                <li class="item2">
+                                  <img src="img/main/cover2.jpg" alt="">
+                                  
+                                  <p class="txt">title2</p>
+                                </li>
+                                <li class="item3">
+                                  <img src="img/main/cover1.jpg" alt="">
+                                  
+                                  <p class="txt">title3</p>
+                                </li>
+                                <li class="item4">
+                                  <img src="img/main/theme4.jpg" alt="">
+                                  <p class="txt">title4</p>
+                                </li>
+                                <li class="item5">
+                                  <img src="img/main/cover3.jpg" alt="">
+                                  <p class="txt">title5</p>
+                                </li>
+                              </ul>
+                        </div>
+                        <button type="button" class="prev">이전</button>
+                        <button type="button" class="next">다음</button>
+                    </div>
                     <div></div>
 
                 </div>

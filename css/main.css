@@ -197,7 +197,7 @@ header>ul>li{
     /* background-color: pink; */
 }
 .fadein>div:nth-of-type(2){
-    background-color: purple;
+    /* background-color: purple; */
     width: 30%;
 }
 .fadein:not(:first-of-type){
@@ -205,12 +205,37 @@ header>ul>li{
 }
 .chart>p{
     width: 100%;
+    padding: 20px 0;
     text-align: center;
 }
 .chart table{
-    width: 90%;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
     text-align: center;
+    /* background-color: rgba(16, 16, 16, 0.5); */
+    border: 1px solid #fff;
+    /* opacity: 0.5; */
+    color: #f1f1f1;
+}
+tbody>tr>td:nth-of-type(2){
+    width: 15%;
+}
+tbody>tr>td img{
+    width: 100%;
+}
+tbody>tr>td{
+    height: 8%;
+}
+.sc{
+    width: 100%;
+    /* background-color: #fff; */
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    /* overflow: hidden; */
 }
 .slider{
     width: 100%;
@@ -231,6 +256,7 @@ header>ul>li{
 .slider ul li img{
     width: 100%;
 }
+
 .item1{
     top: 50%;
     width: 150px;
