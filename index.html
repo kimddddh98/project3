@@ -35,10 +35,16 @@
                 siblings().css('background','rgba(250,250,250,0.2)')
             })
             .eq(0).css('background','rgba(16,16,16,0.8)')
-            $('#sound_text>div').hover(function(){
+            $('#sound_text>div:first').hover(function(){
                 $(this).stop().animate({width:100+'%'})
+
+                $('#sound_text>div:last').stop().animate({width:0})
+
             },function(){
-                $(this).stop().animate({width:85+'%'})
+
+                $(this).stop().animate({width:80+'%'})
+                $('#sound_text>div:last').stop().animate({width:20+'%'})
+
 
             })
 
@@ -149,6 +155,7 @@
                         -album title
                         </p>
                     </div>
+                    <div style="background-color: #fff;"><img src="img/main/maincover.jpg" alt=""></div>
                 </div>
                 <div id="sound_index">
                     <div><span>1</span>/<span>2</span></div>
@@ -239,7 +246,7 @@
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
+                                    <td>2</td>
                                     <td><img src="img/main/chart2.jpg" alt=""></td>
 
                                     <td>ㅁㅁㅁ</td>
@@ -247,7 +254,7 @@
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
+                                    <td>3</td>
                                     <td><img src="img/main/chart3.jpg" alt=""></td>
 
                                     <td>ㅁㅁㅁ</td>
@@ -255,7 +262,7 @@
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
+                                    <td>4</td>
                                     <td><img src="img/main/chart4.jpg" alt=""></td>
 
                                     <td>ㅁㅁㅁ</td>
@@ -263,7 +270,7 @@
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
+                                    <td>5</td>
                                     <td><img src="img/main/chart5.jpg" alt=""></td>
 
                                     <td>ㅁㅁㅁ</td>
@@ -271,7 +278,7 @@
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
+                                    <td>6</td>
                                     <td><img src="img/main/chart6.jpg" alt=""></td>
 
                                     <td>ㅁㅁㅁ</td>
@@ -279,7 +286,7 @@
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
+                                    <td>7</td>
                                     <td><img src="img/main/chart7.jpg" alt=""></td>
 
                                     <td>ㅁㅁㅁ</td>
@@ -287,7 +294,7 @@
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
+                                    <td>8</td>
                                     <td><img src="img/main/chart8.jpg" alt=""></td>
 
                                     <td>ㅁㅁㅁ</td>
@@ -295,7 +302,7 @@
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
+                                    <td>9</td>
                                     <td><img src="img/main/chart9.jpg" alt=""></td>
 
                                     <td>ㅁㅁㅁ</td>
@@ -303,7 +310,7 @@
                                     <td>ㅇㅇㅇ</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
+                                    <td>10</td>
                                     <td><img src="img/main/chart10.jpg" alt=""></td>
 
                                     <td>ㅁㅁㅁ</td>
@@ -387,7 +394,14 @@
                         <button type="button" class="prev">이전</button>
                         <button type="button" class="next">다음</button>
                     </div>
-                    <div></div>
+                    <div class="chart">
+                        <p>
+                            <span class="year">2022</span>.
+                            <span class="month">06</span>.
+                            <span class="date">16</span>
+                        
+                        </p>
+                    </div>
 
                 </div>
                 <div class="fadein">
@@ -421,12 +435,20 @@
                         <button type="button" class="prev">이전</button>
                         <button type="button" class="next">다음</button>
                     </div>
-                    <div></div>
+                    <div class="chart">
+                        <p>
+                            <span class="year">2022</span>.
+                            <span class="month">06</span>.
+                            <span class="date">16</span>
+                        
+                        </p>
+                    </div>
 
                 </div>
             </div>
         </div>
        <script>
+        // 차트 날짜/시간ㅡㅡㅡㅡㅡㅡㅡ
         let today=new Date();
         let year=today.getFullYear();
         let month=today.getMonth()+1;
@@ -466,15 +488,25 @@
                 </div>
             </div>
         </div>
-        <!-- <script>
-            var con=document.querySelector('#container_m>div')
-            var fade=document.querySelector('.fadein');
-            for(var i=0;i<fade.length;i++){
-                
-            }
-        </script> -->
         
-       
+       <div id="pd">
+            <div>
+                <div id='pd_bg'>
+                    <p>역주행 TOP 100</p>
+                    <div id="button_box">
+                        <div>
+                            <span>prev</span>
+                            <div><img src="img/main/chart1.jpg" alt=""></div>
+                        </div>
+                        <div>
+                            <span>next</span>
+                            <div><img src="img/main/chart2.jpg" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+       </div>
         <footer>
             <div>footer</div>
         </footer>
