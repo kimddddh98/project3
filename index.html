@@ -8,127 +8,13 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
-    <script>
-        window.onload = function () {
-                function ani() {
-                    for (var i = 0; i < $('path').length; i++) {
-                        $('path').delay(1000).eq(i).animate({ opacity: 1 }, 1000)
-                            .animate({ opacity: 0.4 }, 1000)
-                    }
-                }
-                ani();
-                setInterval(ani, 18000)
-            }
-        $(function(){
-            for(var i=1;i<6;i++){
-            $('.slider>ul>li').removeClass('item'+i)
+    <script src="js/index.js"></script>
 
-            }
-            $('.slider>ul>li').addClass('item3');
-            $('.item3').eq(2).css('z-index','4')
-         
-            $('#container_m>div').on('click',function(){
-                var index=$(this).index()
-                $('.fadein').css('display','none');
-                $('.fadein').eq(index).slideDown(1000).css('display','flex')
-                $(this).css('background','rgba(16,16,16,0.8)').
-                siblings().css('background','rgba(250,250,250,0.2)')
-            })
-            .eq(0).css('background','rgba(16,16,16,0.8)')
-            $('#sound_text>div:first').hover(function(){
-                $(this).stop().animate({width:100+'%'})
-
-                $('#sound_text>div:last').stop().animate({width:0})
-
-            },function(){
-
-                $(this).stop().animate({width:80+'%'})
-                $('#sound_text>div:last').stop().animate({width:20+'%'})
-
-
-            })
-
-            // #full 호버효과ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-            $('#full>div').mouseover(function(){
-                $(this).siblings().children('div').css({width:0,height:0})
-                $(this).css({
-                    opacity:1,
-                    filter:'none'
-                })
-                .children('').css({opacity:1})
-                .end().children('div').css({width:300,height:300})
-                
-                $(this).siblings().css({
-                    opacity:0.8,
-                    filter: 'grayscale(50%)'
-                })
-                .end().siblings().children().css({opacity:0})
-            })
-
-            // 차트 슬라이드,ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-            $('.next').click(function () {
-                var x=$('.next').index(this)
-                $('.slider').eq(x).find('li:first').appendTo($('.slider').eq(x).find('ul'))
-
-                for (var i = 1; i <= $('.slider').eq(x).find('li').length; i++) {
-                    $('.slider').eq(x).find('.item' + i).removeClass('item' + i)
-                    $('.slider').eq(x).find('li').eq(i - 1).toggleClass('item' + i)
-                    if (i == 2) {
-                        $('.slider').eq(x).find('li').eq(i).css('top', '50%')
-                    }
-                }
-            })
-            $('.prev').click(function () {
-                var y=$('.prev').index(this)
-                $('.slider').eq(y).find('li:last').prependTo($('.slider').eq(y).find('ul'))
-
-                for (var i = 1; i <= $('.slider').eq(y).find('li').length; i++) {
-                    $('.slider').eq(y).find('.item' + i).removeClass('item' + i)
-                    $('.slider').eq(y).find('li').eq(i - 1).toggleClass('item' + i)
-                    if (i == 2) {
-                        $('.slider').eq(y).find('li').eq(i).css('top', '50%')
-                    }
-                }
-            })
-            // table 복제ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-            $('.table').appendTo('.chart')
-
-
-            // 스크롤이벤트ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-            $(window).scroll(function(){
-                var c=$('#sound_text').offset()
-                var e=$(window).scrollTop()
-                var chart=$('#container_c').offset()
-                
-                if(e>chart.top-500){
-                    $('.slider>ul>li').removeClass('item3');
-                    for(var i=0;i<5;i++){
-                    $('.slider>ul>li').eq(i).addClass('item'+(i+1))
-                    }
-                    $('.item3').css('top','50%');
-
-                }
-                else if(e>c.top){
-                    $('header').css({
-                        opacity:1
-                    })
-                }
-                else{
-                    $('header').css({
-                        opacity:0.8
-                    })
-                }
-            })
-
-           
-        });
-        
-    </script>
 </head>
 <body>
     <div id="wrap">
         <header>
-            <div id="logo">a</div>
+            <div id="logo">logo</div>
             <ul>
                 <li>인기차트 
                 </li>
@@ -137,7 +23,7 @@
                 <li>매거진</li>
                 <li>TV</li>
             </ul>
-            <div id="search">a</div>
+            <div id="search">search</div>
         </header>
       
         <div id="sound">
@@ -147,7 +33,7 @@
             </div>
             <div id="sound_box">
                 <div id="sound_text">
-                    <div>
+                    <div id="line">
                         <p>
                        title-artist()
                         </p>
@@ -492,15 +378,27 @@
        <div id="pd">
             <div>
                 <div id='pd_bg'>
+                    <div id="change"><img src="img/main/main.png" alt=""></div>
                     <p>역주행 TOP 100</p>
                     <div id="button_box">
-                        <div>
+                        <div id="pd_prev">
+                            <div >
+                                <img src="img/main/chart1.jpg" alt="">
+                            </div>
+                            <div class="c2">
+                                <img src="img/main/chart2.jpg" alt="">
+                            </div>
+                            <div >
+                                <img src="img/main/main.png" alt="">
+                            </div>
+                            <div class="c4">
+                                <img src="img/main/chart3.jpg" alt="">
+                            </div>
+                            <div>
+                                <img src="img/main/chart4.jpg" alt="">
+                            </div>
                             <span>prev</span>
-                            <div><img src="img/main/chart1.jpg" alt=""></div>
-                        </div>
-                        <div>
                             <span>next</span>
-                            <div><img src="img/main/chart2.jpg" alt=""></div>
                         </div>
                     </div>
                 </div>
@@ -508,7 +406,11 @@
             </div>
        </div>
         <footer>
-            <div>footer</div>
+            <div id="footer_box">
+                <div id="box1"></div>
+                <div id="box2"></div>
+                <div id="box3"></div>
+            </div>
         </footer>
         <svg id="svg" class="stroke" style="background-color:#121212;">
             <path  stroke="#bf611b" d="M -0 915 L -1 0 C 16.3 0, 146.7 -129, 163 -129 C 179.3 -129, 309.7 129, 326 129 C 342.3 129, 472.7 -129, 489 -129 C 505.3 -129, 635.7 129, 652 129 C 668.3 129, 798.7 -129, 815 -129 C 831.3 -129, 961.7 129, 978 129 C 994.3 129, 1124.7 -129, 1141 -129 C 1157.3 -129, 1287.7 129, 1304 129 C 1320.3 129, 1450.7 -129, 1467 -129 C 1483.3 -129, 1613.7 129, 1630 129 C 1646.3 129, 1776.7 -129, 1793 -129 C 1809.3 -129, 1939.7 129, 1956 129 "></path>
