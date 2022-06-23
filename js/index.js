@@ -76,9 +76,91 @@ $(function () {
             .end().siblings().children().css({ opacity: 0 })
     })
 
-
+    const chart1={
+        title:'LOVE DIVE',
+        artist:'IVE',
+        album:'LOVE DIVE'
+    }
+    const chart2={
+        title:'사랑인가봐',
+        artist:'멜로망스',
+        album:'사랑인가봐'
+    }
+    const chart3={
+        title:'정이라고 하자',
+        artist:'BIG Naughty',
+        album:'정이라고 하자'
+    }
+    const chart4={
+        title:'팡파레',
+        artist:'다비치',
+        album:'Season Note'
+    }
+    const chart5={
+        title:'That That',
+        artist:'싸이(PSY)',
+        album:'싸다9'
+    }
+    const chart6={
+        title:'Yet To Come',
+        artist:'방탄소년단',
+        album:'Proof'
+    }
+    const chart7={
+        title:'One More Time',
+        artist:'폴킴',
+        album:'star'
+    }
+    const chart8={
+        title:'	봄여름가을겨울',
+        artist:'BIGBANG(빅뱅)',
+        album:'봄여름가을겨울'
+    }
+    const chart9={
+        title:'낭만교향곡',
+        artist:'BIG Naughty ',
+        album:'낭만'
+    }
+    const chart10={
+        title:'TOMBOY',
+        artist:'(여자)아이들',
+        album:'I NEVER DIE'
+    }
     // table 복제ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-    $('.table').appendTo('.chart')
+    $('.table').appendTo('.chart');
+    $('tbody>tr>td').find('img[alt=1]').parent().siblings('.title').text(chart1.title)
+    .siblings('.artist').text(chart1.artist)
+    .siblings('.album').text(chart1.album)
+    $('tbody>tr>td').find('img[alt=2]').parent().siblings('.title').text(chart2.title)
+    .siblings('.artist').text(chart2.artist)
+    .siblings('.album').text(chart2.album)
+    $('tbody>tr>td').find('img[alt=3]').parent().siblings('.title').text(chart3.title)
+    .siblings('.artist').text(chart3.artist)
+    .siblings('.album').text(chart3.album)
+    $('tbody>tr>td').find('img[alt=4]').parent().siblings('.title').text(chart4.title)
+    .siblings('.artist').text(chart4.artist)
+    .siblings('.album').text(chart4.album)
+    $('tbody>tr>td').find('img[alt=5]').parent().siblings('.title').text(chart5.title)
+    .siblings('.artist').text(chart5.artist)
+    .siblings('.album').text(chart5.album)
+    $('tbody>tr>td').find('img[alt=6]').parent().siblings('.title').text(chart6.title)
+    .siblings('.artist').text(chart6.artist)
+    .siblings('.album').text(chart6.album)
+    $('tbody>tr>td').find('img[alt=7]').parent().siblings('.title').text(chart7.title)
+    .siblings('.artist').text(chart7.artist)
+    .siblings('.album').text(chart7.album)
+    $('tbody>tr>td').find('img[alt=8]').parent().siblings('.title').text(chart8.title)
+    .siblings('.artist').text(chart8.artist)
+    .siblings('.album').text(chart8.album)
+    $('tbody>tr>td').find('img[alt=9]').parent().siblings('.title').text(chart9.title)
+    .siblings('.artist').text(chart9.artist)
+    .siblings('.album').text(chart9.album)
+    $('tbody>tr>td').find('img[alt=10]').parent().siblings('.title').text(chart10.title)
+    .siblings('.artist').text(chart10.artist)
+    .siblings('.album').text(chart10.album)
+    
+    
+
 
     //pd sliderㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     setInterval(nn, 5000)
