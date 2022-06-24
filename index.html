@@ -14,7 +14,9 @@
 <body>
     <div id="wrap">
         <header>
-            <div id="logo">logo</div>
+            <div id="logo"><a href="#">
+                <img src="img/main/logo_transparent.png" alt="">
+            </a></div>
             <ul>
                 <li>인기차트 
                 </li>
@@ -23,15 +25,15 @@
                 <li>매거진</li>
                 <li>TV</li>
             </ul>
-            <div id="search">search</div>
+            <div id="search"><img src="img/main/search.png" alt=""></div>
         </header>
       
         <div id="sound">
-            <video src="img/main/teaser2.mp4" autoplay muted></video>
+            <video src="img/main/teaser2.mp4" autoplay muted id="video1"></video>
 
-            <video src="img/main/teaser.mp4" autoplay muted></video>
+            <video src="img/main/teaser.mp4" autoplay muted id="video2"></video>
             <div id="control">
-                <div><img src="img/main/careers-arrow (1).svg" alt=""></div>
+                <div><img src="img/main/careers-arrow (1).svg" id="prev" alt=""></div>
                 <div><img id='next'src="img/main/careers-arrow.svg" alt=""></div>
             </div>
             <div id="sound_box">
@@ -43,9 +45,13 @@
                         <p>
                         -album title
                         </p>
+                    <div class="go"><img src="img/main/stop.png" alt=""></div>
+
+                        <div class="go"><img src="img/main/go.png" alt=""></div>
+               
                     </div>
-                    <div style="background-color: #fff;"><img src="img/main/videocover2.jpg" alt=""></div>
-                </div>
+                    <div id="maincover"><img src="img/main/videocover2.jpg" alt=""></div>
+                     </div>
                 <div id="sound_index">
                     <div><span>1</span>/<span>2</span></div>
                 </div>
@@ -58,17 +64,12 @@
             </div>
             <div>
                 <div></div>
-
                 <p>인기음악</p>
-                
             </div>
             <div>
                 <div></div>
-
                 <p>해외음악</p>
-                
             </div>
-
         </div>
         <div id="container">
             <div id="container_m">
@@ -410,7 +411,12 @@
        </div>
         <footer>
             <div id="footer_box">
-                <div id="box1"></div>
+                <div id="box1">
+                    <div>
+                    <img src="img/main/logo_transparent.png" alt="">
+
+                    </div>
+                </div>
                 <div id="box2">
                     <ul>
                         <li><a href="#">회사소개</a></li>

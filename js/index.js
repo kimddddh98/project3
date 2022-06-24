@@ -16,6 +16,36 @@ $(function () {
         $(this).stop().animate({ width: 80 + '%' })
         $('#sound_text>div:last').stop().animate({ width: 20 + '%' })
     })
+    var vIndex=0;
+
+    $('#next').click(function(){
+        vIndex++ 
+
+        if(vIndex>=$('video').length){
+            vIndex=0
+            $('#maincover img').eq(0).prop('src','img/main/videocover2.jpg')
+        }
+        else{
+            $('#maincover img').eq(0).prop('src','img/main/videocover.jpg')
+        }
+
+        $('video').eq(vIndex-1).hide();
+        $('video').eq(vIndex).fadeIn(500)
+
+        // $('#sound_text img').prop('src','img/main/videocover.jpg')
+    });
+    document.getElementsByClassName('go')[0].onclick=function(){
+        video1.pause();
+        video2.pause();
+        document.getElementsByClassName('go')[0].style.display='none'
+        document.getElementsByClassName('go')[1].style.display='block'
+    }
+    document.getElementsByClassName('go')[1].onclick=function(){
+        video1.play();
+        video2.play();
+        document.getElementsByClassName('go')[1].style.display='none'
+        document.getElementsByClassName('go')[0].style.display='block'
+    }
 
     //차트메뉴 슬라이드다운ㅡㅡㅡㅡㅡㅡㅡㅡ
     $('#container_m>div').on('click', function () {
