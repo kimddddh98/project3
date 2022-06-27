@@ -44,30 +44,38 @@ header{
     width: 100%;
     height: 100%;
 }
-header ul{
+header>ul{
     width: 50%;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 18px;
+
+}
+header .sub{
+    width: 100%;
+    display: none;
+    position: absolute;
     font-size: 18px;
 }
-header>ul>li{
-    text-align: center;
-    width: 100%;
-    padding: 0 20px;
+.sub li{
+    padding: 10px 0;
 }
-
+.sub a{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+header>ul>li{
+    width: 100%;
+    position: relative;
+}
 #sound{
     width: 100%;
     height: 55.8vw;
     position: relative;
-    /* background-image: url(../img/main/main.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: end; */
-   
 }
 #sound video{
     width: 100%;
@@ -92,10 +100,12 @@ video:not(:first-of-type){
 }
 #control div{
     height: 40%;
+
 }
 #control img{
     width: 90%;
     height: 100%;
+    cursor: pointer;
 }
 #next{
     transform: scaleX(-1);
@@ -420,10 +430,9 @@ table,tr,td{
     background-color: #000;
     width: 100%;
     height: 1100px;
-    text-align: center;
-    margin-top: 100px;
-    padding-bottom: 100px;
+    margin-top: 150px;
 }
+
 #story_con{
     width: 1300px;
     height: 100%;
@@ -454,41 +463,54 @@ table,tr,td{
 }
 #story_con>div>div{
     border: 1px solid #fff;
+    display: flex;
+    align-items: flex-end;
+}
+#story_con p{
+    padding: 10px 0;
+    font-size: 20px;
 }
 .con_one>.first{
     width: 100%;
     height: 55%;
+    background-image: url(../img/main/cover.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .con_one>.second{
     height: 30%;
-    width: 55%;
+    width: 60%;
+    background-image: url(../img/main/theme.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .con_two>.first{
     width: 100%;
     height: 35%;
+    background-image: url(../img/main/theme3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .con_two>.second{
     width: 60%;
     height: 50%;
     align-self: center;
+    background-image: url(../img/main/theme4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-#bgbox{
-    width: 100%;
-    height: 1000px;
-    background-color: #121212;
-    display: flex;
-    /* background-image: url(../img/main/Visiwig-Chevrons.svg); */
-    /* background-attachment: fixed; */
-    /* opacity: 0.5; */
-    position: relative;
-}
 #pd{
     width: 100%;
-    height: 900px;
+    height: 1000px;
+    margin-top: 150px;
 }
 #pd>div{
-    width: 80%;
+    width: 75%;
     height: 100%;
 }
 #pd_bg{
@@ -499,6 +521,7 @@ table,tr,td{
     background-size: cover;
     background-position: center; */
     position: relative;
+    cursor: pointer;
 
 }
 #change{
@@ -512,11 +535,10 @@ table,tr,td{
 #pd_bg>p{
     width: 100%;
     text-align: center;
-    margin-top: -50px;
     color: #f1f1f1;
     position: absolute;
-    bottom: -12%;
-    font-size: 100px;
+    bottom: -6%;
+    font-size: 5vh;
 }
 
 #button_box{
@@ -531,6 +553,7 @@ table,tr,td{
     height: 100%;
     display: flex;
     position: relative;
+    cursor: pointer;
 
 }
 #pd_prev>div{
@@ -586,7 +609,6 @@ footer{
 }
 #footer_box>div{
     height: 100%;
-    background-color: aqua;
 }
 #box1{
     width: 15%;
@@ -629,7 +651,26 @@ footer{
     color: #aaa
 }
 #box3{
-    width: 20%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#box3 a{
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#box3 a:nth-of-type(1){
+    background-image: url(../img/main/i_instar.png);
+}
+#box3 a:nth-of-type(2){
+    background-image: url(../img/main/i_facebook.png);
+}
+#box3 a:nth-of-type(3){
+    background-image: url(../img/main/i_youtube.png);
 }
 svg path{
     opacity: 0.4;

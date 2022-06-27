@@ -8,6 +8,13 @@ $(function () {
     }
     ani();
     setInterval(ani, 18000)
+    $('header>ul>li').mouseover(function(){
+        $(this).children('.sub').css('display','block')
+    })
+    $('header>ul>li').mouseout(function(){
+        $(this).children('.sub').css('display','none')
+
+    })
     //메인슬라이드ㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     $('#sound_text>div:first').hover(function () {
         $(this).stop().animate({ width: 100 + '%' })
@@ -24,15 +31,40 @@ $(function () {
         if(vIndex>=$('video').length){
             vIndex=0
             $('#maincover img').eq(0).prop('src','img/main/videocover2.jpg')
+            $('#sound_index span').eq(0).text('1')
+            video2.pause()
+            video1.play();
         }
         else{
             $('#maincover img').eq(0).prop('src','img/main/videocover.jpg')
+            $('#sound_index span').eq(0).text('2')
+            video1.pause()
+            video2.play();
         }
-
         $('video').eq(vIndex-1).hide();
-        $('video').eq(vIndex).fadeIn(500)
-
-        // $('#sound_text img').prop('src','img/main/videocover.jpg')
+        $('video').eq(vIndex).fadeIn(500);
+        $('.go').eq(0).css('display','block');
+        $('.go').eq(1).css('display','none')
+    });
+    $('#prev').click(function(){
+        vIndex-- 
+        if(vIndex<=-1){
+            vIndex=$('video').length-1
+            $('#maincover img').eq(0).prop('src','img/main/videocover.jpg')
+            $('#sound_index span').eq(0).text('2')
+            video1.pause()
+            video2.play();
+        }
+        else{
+            $('#maincover img').eq(0).prop('src','img/main/videocover2.jpg')
+            $('#sound_index span').eq(0).text('1');
+            video2.pause()
+            video1.play();
+        }
+        $('video').eq(vIndex-1).hide();
+        $('video').eq(vIndex).fadeIn(500);
+        $('.go').eq(0).css('display','block');
+        $('.go').eq(1).css('display','none')
     });
     document.getElementsByClassName('go')[0].onclick=function(){
         video1.pause();
@@ -63,7 +95,7 @@ $(function () {
     }
     $('.slider>ul>li').addClass('item3');
     $('.item3').eq(2).css('z-index', '4')
-
+   
     $('.next').click(function () {
         var x = $('.next').index(this)
         $('.slider').eq(x).find('li:first').appendTo($('.slider').eq(x).find('ul'))
@@ -72,6 +104,10 @@ $(function () {
             $('.slider').eq(x).find('li').eq(i - 1).toggleClass('item' + i)
             if (i == 2) {
                 $('.slider').eq(x).find('li').eq(i).css('top', '50%')
+                $('.sc ul li').eq(i).find('.txt').fadeIn()
+                $('.sc ul li').eq(i).siblings().find('.txt').css('display','none');
+
+
             }
         }
     })
@@ -84,6 +120,9 @@ $(function () {
             $('.slider').eq(y).find('li').eq(i - 1).toggleClass('item' + i)
             if (i == 2) {
                 $('.slider').eq(y).find('li').eq(i).css('top', '50%')
+                $('.sc ul li').eq(i).find('.txt').fadeIn()
+                $('.sc ul li').eq(i).siblings().find('.txt').css('display','none');
+
             }
         }
     })
@@ -188,7 +227,13 @@ $(function () {
     $('tbody>tr>td').find('img[alt=10]').parent().siblings('.title').text(chart10.title)
     .siblings('.artist').text(chart10.artist)
     .siblings('.album').text(chart10.album)
-    
+    $('.sc ul li').eq(2).css('display','block')
+    $('.sc ul li').eq(2).siblings().find('.txt').css('display','none');
+    $('.sc ul li').find('img[alt=1]').siblings('.txt').text(chart1.title+' - '+chart1.artist)
+    $('.sc ul li').find('img[alt=2]').siblings('.txt').text(chart2.title+' - '+chart2.artist)
+    $('.sc ul li').find('img[alt=3]').siblings('.txt').text(chart3.title+' - '+chart3.artist)
+    $('.sc ul li').find('img[alt=4]').siblings('.txt').text(chart4.title+' - '+chart4.artist)
+    $('.sc ul li').find('img[alt=5]').siblings('.txt').text(chart5.title+' - '+chart5.artist)
     
 
 
@@ -196,10 +241,12 @@ $(function () {
     setInterval(nn, 5000)
     function nn() {
         var asd = $('#pd_prev>div:eq(3)').find('img').prop('src')
+        var alt = $('#pd_prev>div:eq(3)').find('img').prop('alt')
         $('#pd_prev>div>div').remove()
 
         $('#change').css({ width: 30 + '%', opacity: 0.3 });
-        $('#change img').prop('src', asd)
+        $('#change img').prop('src', asd);
+        $('#pd p').text(alt)
         $('#change').stop().animate({
             width: 100 + '%', opacity: 1
         }, 500);
@@ -217,10 +264,14 @@ $(function () {
         $('#pd_prev>div').odd().css({ width: 100 + '%' });
     }
     function bb() {
-        var asd = $('#pd_prev>div:eq(1)').find('img').prop('src')
-        $('#pd_prev>div>div').remove()
+        var asd = $('#pd_prev>div:eq(1)').find('img').prop('src');
+        var alt = $('#pd_prev>div:eq(3)').find('img').prop('alt');
+
+        $('#pd_prev>div>div').remove();
         $('#change').css({ width: 30 + '%', opacity: 0.3 });
-        $('#change img').prop('src', asd)
+        $('#change img').prop('src', asd);
+        $('#pd p').text(alt);
+
         $('#change').stop().animate({
             width: 100 + '%', opacity: 1
         }, 500);
