@@ -121,7 +121,6 @@ $(function () {
             if(parseInt(video1.duration)-parseInt(video1.currentTime)==0){
                 bar(video1.duration,0)
                 video1.play();
-    
             }
             else{
                 bar(parseInt(video1.duration),parseInt(video1.currentTime) );
@@ -132,7 +131,6 @@ $(function () {
             if(parseInt(video2.duration)-parseInt(video2.currentTime)==0){
                 bar(video2.duration,0)
                 video2.play();
-    
             }
             else{
                 bar(parseInt(video2.duration),parseInt(video2.currentTime) );
@@ -155,7 +153,7 @@ $(function () {
 
         })
     }
-    bar(video1.duration,0);
+    bar(22,0);
     //차트메뉴 슬라이드다운ㅡㅡㅡㅡㅡㅡㅡㅡ
     $('#container_m>div').on('click', function () {
         var index = $(this).index()
