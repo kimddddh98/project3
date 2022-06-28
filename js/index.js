@@ -8,12 +8,12 @@ $(function () {
     }
     ani();
     setInterval(ani, 18000)
+ 
     $('header>ul>li').mouseover(function(){
-        $(this).children('.sub').css('display','block')
+        $(this).find('.sub').css('display','block')
     })
     $('header>ul>li').mouseout(function(){
-        $(this).children('.sub').css('display','none')
-
+        $(this).find('.sub').css('display','none')
     })
     //메인슬라이드ㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     $('#sound_text>div:first').hover(function () {
@@ -23,10 +23,25 @@ $(function () {
         $(this).stop().animate({ width: 80 + '%' })
         $('#sound_text>div:last').stop().animate({ width: 20 + '%' })
     })
+   
     var vIndex=0;
-
+    var VideoText={
+        one:{
+            title:'Celebrity',
+            artist:'아이유(IU)',
+            album:'IU 5th Album "LILAC"'
+        },
+        two:{
+            title:'태지',
+            artist:'창모(CHANGMO)',
+            album:'UNDERGROUND ROCKSTAR'
+        }
+    }
+    $('#line p').eq(0).text(VideoText.one.title+' - '+VideoText.one.artist) 
+            $('#line p').eq(1).text(VideoText.one.album)
     $('#next').click(function(){
         vIndex++ 
+        $('#after').stop().css('width','0')
 
         if(vIndex>=$('video').length){
             vIndex=0
@@ -34,12 +49,23 @@ $(function () {
             $('#sound_index span').eq(0).text('1')
             video2.pause()
             video1.play();
+            $('#line p').eq(0).text(VideoText.one.title+' - '+VideoText.one.artist) 
+            $('#line p').eq(1).text(VideoText.one.album) 
+            bar(parseInt(video1.duration),parseInt(video1.currentTime) );
+           
+
+
         }
         else{
             $('#maincover img').eq(0).prop('src','img/main/videocover.jpg')
             $('#sound_index span').eq(0).text('2')
             video1.pause()
             video2.play();
+        $('#line p').eq(0).text(VideoText.two.title+' - '+VideoText.two.artist) 
+        $('#line p').eq(1).text(VideoText.two.album) 
+
+            bar(parseInt(video2.duration),parseInt(video2.currentTime) );
+
         }
         $('video').eq(vIndex-1).hide();
         $('video').eq(vIndex).fadeIn(500);
@@ -48,37 +74,88 @@ $(function () {
     });
     $('#prev').click(function(){
         vIndex-- 
+        $('#after').stop().css('width','0')
+
         if(vIndex<=-1){
             vIndex=$('video').length-1
             $('#maincover img').eq(0).prop('src','img/main/videocover.jpg')
             $('#sound_index span').eq(0).text('2')
             video1.pause()
             video2.play();
+            $('#line p').eq(0).text(VideoText.two.title+' - '+VideoText.two.artist) 
+        $('#line p').eq(1).text(VideoText.two.album) 
+
+            bar(parseInt(video2.duration),parseInt(video2.currentTime) );
+
         }
         else{
             $('#maincover img').eq(0).prop('src','img/main/videocover2.jpg')
             $('#sound_index span').eq(0).text('1');
             video2.pause()
             video1.play();
+            $('#line p').eq(0).text(VideoText.one.title+' - '+VideoText.one.artist) 
+            $('#line p').eq(1).text(VideoText.one.album) 
+            bar(parseInt(video1.duration),parseInt(video1.currentTime) );
+
         }
         $('video').eq(vIndex-1).hide();
         $('video').eq(vIndex).fadeIn(500);
         $('.go').eq(0).css('display','block');
-        $('.go').eq(1).css('display','none')
+        $('.go').eq(1).css('display','none');
     });
     document.getElementsByClassName('go')[0].onclick=function(){
-        video1.pause();
-        video2.pause();
+        if(vIndex==0){
+            video1.pause();
+        }
+        else{
+            video2.pause();
+        }
+        $('#after').stop();
         document.getElementsByClassName('go')[0].style.display='none'
         document.getElementsByClassName('go')[1].style.display='block'
     }
     document.getElementsByClassName('go')[1].onclick=function(){
-        video1.play();
-        video2.play();
+        video1=document.getElementById('video1');
+        video2=document.getElementById('video2');
+        if(vIndex==0){
+            if(parseInt(video1.duration)-parseInt(video1.currentTime)==0){
+                bar(video1.duration,0)
+                video1.play();
+    
+            }
+            else{
+                bar(parseInt(video1.duration),parseInt(video1.currentTime) );
+                video1.play();
+            }
+        }
+        else{
+            if(parseInt(video2.duration)-parseInt(video2.currentTime)==0){
+                bar(video2.duration,0)
+                video2.play();
+    
+            }
+            else{
+                bar(parseInt(video2.duration),parseInt(video2.currentTime) );
+                video2.play();
+            }
+        }
+        
+        
         document.getElementsByClassName('go')[1].style.display='none'
         document.getElementsByClassName('go')[0].style.display='block'
+        
     }
+    function bar(d,c){
+        $('#after').animate({
+            width:100+'%'
+        },(d-c)*1000,'linear',function(){
+            document.getElementsByClassName('go')[0].style.display='none';
+            document.getElementsByClassName('go')[1].style.display='block';
+            $('#after').css('width','0')
 
+        })
+    }
+    bar(video1.duration,0);
     //차트메뉴 슬라이드다운ㅡㅡㅡㅡㅡㅡㅡㅡ
     $('#container_m>div').on('click', function () {
         var index = $(this).index()
@@ -311,14 +388,14 @@ $(function () {
             $('.item3').css('top', '50%');
         }
         else if (e > c.top) {
-            $('header').css({
-                opacity: 1
-            })
+            // $('header').css({
+            //     backgroundColor: rgba(16, 16, 16, 1)
+
+            // })
+            $('header').css('background-color','rgba(16,16,16,1)')
         }
-        else {
-            $('header').css({
-                opacity: 0.8
-            })
+        else{
+            $('header').css('background-color','rgba(16,16,16,0.8)')
         }
     })
 });
