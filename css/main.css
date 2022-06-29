@@ -545,9 +545,10 @@
     }
     
     #button_box{
-        width: 95%;
-        height: 190px;
-        margin-top: 40px;
+        width: 90vw;
+        height: 45vw;
+        margin-top: 10vw;
+        justify-content: center;
         /* position: absolute; */
         /* bottom: -80px; */
         /* right: -200px; */
