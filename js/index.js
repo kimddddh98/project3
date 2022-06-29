@@ -219,42 +219,21 @@ $(function () {
         })
             .end().siblings().children().css({ opacity: 0 })
     })
+    function Chart(title,artist,album){
+        this.title=title;
+        this.artist=artist;
+        this.album=album;
+    }
+    const chart1=new Chart('LOVE DIVE','IVE','LOVE DIVE')
 
-    const chart1={
-        title:'LOVE DIVE',
-        artist:'IVE',
-        album:'LOVE DIVE'
-    }
-    const chart2={
-        title:'사랑인가봐',
-        artist:'멜로망스',
-        album:'사랑인가봐'
-    }
-    const chart3={
-        title:'정이라고 하자',
-        artist:'BIG Naughty',
-        album:'정이라고 하자'
-    }
-    const chart4={
-        title:'팡파레',
-        artist:'다비치',
-        album:'Season Note'
-    }
-    const chart5={
-        title:'That That',
-        artist:'싸이(PSY)',
-        album:'싸다9'
-    }
-    const chart6={
-        title:'Yet To Come',
-        artist:'방탄소년단',
-        album:'Proof'
-    }
-    const chart7={
-        title:'One More Time',
-        artist:'폴킴',
-        album:'star'
-    }
+    const chart2=new Chart('사랑인가봐','멜로망스','사랑인가봐')
+    const chart3=new Chart('정이라고 하자','BIG Naughty','정이라고 하자')
+    const chart4=new Chart('팡파레','다비치','Season Note')
+    
+    const chart5=new Chart('That That','싸이(PSY)','싸다9')
+    const chart6=new Chart('Yet To Come','방탄소년단','Proof')
+    const chart7=new Chart('One More Time','폴킴','star')
+    
     const chart8={
         title:'	봄여름가을겨울',
         artist:'BIGBANG(빅뱅)',
