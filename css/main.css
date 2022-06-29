@@ -392,19 +392,14 @@
         transform: scale(2) rotate(-180deg);
         background: #fff;
       }
-      .next{
+    .sc div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
-        top: 105%;
-        left: 43%;
-        transform: translateX(-43%);
-      }
-      .prev{
-        position: absolute;
-        top: 105%;
-        left: 41%;
-        transform: translateX(-41%);
-    
-      }
+        bottom: 0;
+    }
     #story{
         background-color: #000;
         width: 100%;
@@ -989,19 +984,13 @@
         transform: scale(2) rotate(-180deg);
         background: #fff;
       }
-      .next{
+    .sc div{
+        display: flex;
+        justify-content: center;
+        width: 100%;
         position: absolute;
-        top: 105%;
-        left: 43%;
-        transform: translateX(-43%);
-      }
-      .prev{
-        position: absolute;
-        top: 105%;
-        left: 41%;
-        transform: translateX(-41%);
-    
-      }
+        bottom: -15%;        
+    }
     #story{
         background-color: #000;
         width: 100%;
