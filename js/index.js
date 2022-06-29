@@ -186,6 +186,11 @@ $(function () {
             }
         }
     })
+    $('.sc ul').find('img[alt=1]').prop('src','img/main/chart1.jpg')
+    $('.sc ul').find('img[alt=2]').prop('src','img/main/chart2.jpg')
+    $('.sc ul').find('img[alt=3]').prop('src','img/main/chart3.jpg')
+    $('.sc ul').find('img[alt=4]').prop('src','img/main/chart4.jpg')
+    $('.sc ul').find('img[alt=5]').prop('src','img/main/chart5.jpg')
 
     $('.prev').click(function () {
         var y = $('.prev').index(this)
