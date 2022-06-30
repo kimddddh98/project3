@@ -153,7 +153,8 @@ $(function () {
 
         })
     }
-    bar(22,0);
+
+    video1.play(bar(video1.duration,0))
     //차트메뉴 슬라이드다운ㅡㅡㅡㅡㅡㅡㅡㅡ
     $('#container_m>div').on('click', function () {
         var index = $(this).index()
@@ -381,4 +382,3 @@ $(function () {
         }
     })
 });
-
