@@ -1,3 +1,7 @@
+// window.location.reload=function(){
+//     video1.play(bar(video1.duration,0))
+// }
+
 $(function () {
     // svg배경ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     function ani() {
@@ -9,10 +13,10 @@ $(function () {
     ani();
     setInterval(ani, 18000)
  
-    $('header>ul>li').mouseover(function(){
+    $('#mainmenu>li').mouseover(function(){
         $(this).find('.sub').css('display','block')
     })
-    $('header>ul>li').mouseout(function(){
+    $('#mainmenu>li').mouseout(function(){
         $(this).find('.sub').css('display','none')
     })
     //메인슬라이드ㅡㅡㅡㅡㅡㅡㅡㅡㅡ
@@ -154,7 +158,7 @@ $(function () {
         })
     }
 
-    video1.play(bar(video1.duration,0))
+    video1.play(bar(22,0))
     //차트메뉴 슬라이드다운ㅡㅡㅡㅡㅡㅡㅡㅡ
     $('#container_m>div').on('click', function () {
         var index = $(this).index()

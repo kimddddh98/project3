@@ -35,14 +35,173 @@
         z-index: 10;
     }
     #logo{
-        width: 30%;
+        width: 140px;
     }
     #logo img{
         width: 100%;
         height: 100%;
     }
     #search{
-        width: 5%;
+        width: 25px;
+        cursor: pointer;
+    }
+    #search img{
+        width: 100%;
+    }
+    #mainmenu{
+        width: 50%;
+        height: 100%;
+        display: none;
+        align-items: center;
+        justify-content: space-around;
+        text-align:center;
+        font-size: 18px;
+    }
+    #mainmenu>li{
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+    }
+    #mainmenu>li>.sub{
+        width: 100%;
+        display: none;
+        font-size: 18px;
+        background-color: rgba(16, 16, 16, 0.8);
+    }
+    .sub li{
+        line-height: 50px;
+    }
+    
+    #mainmenu>li a{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+    }
+    #mini{
+        display: none;
+    }
+    footer{
+        width: 100%;
+        height: 320px;
+        background-color: #121212;
+        display: flex;
+        align-items: center;
+    }
+    #footer_box{
+        width: 100%;
+        height: 75%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    #footer_box>div{
+        height: 100%;
+    }
+    #box1{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #box1>div{
+        /* background-color: red; */
+        width: 100%;
+        height: 50%;
+    }
+    #box1 img{
+        width: 100%;
+        height: 100%;
+    }
+    #box2{
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 11px;
+    }
+   
+    #box2 ul{
+        width: 40%;
+        /* height: 20%; */
+    }
+    #box2>div{
+        width: 40%;
+    }
+    #box2 li{
+        width: 100%;
+        padding: 10px 0;
+    }
+    #box2 a{
+        color:rgba(255, 255, 255,0.8)
+    }
+    #box2 p{
+        width: 100%;
+        color: #aaa;
+        padding: 10px 0;
+
+    }
+    #box3{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    #box3 a{
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    #box3 a:nth-of-type(1){
+        background-image: url(../img/main/i_instar.png);
+    }
+    #box3 a:nth-of-type(2){
+        background-image: url(../img/main/i_facebook.png);
+    }
+    #box3 a:nth-of-type(3){
+        background-image: url(../img/main/i_youtube.png);
+    }
+}
+@media screen and (min-width:751px) and (max-width:1299px){
+    svg path{
+        opacity: 0.4;
+    }
+    svg{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -99;
+        width: 100%;
+        height: 100%;
+    }
+    #wrap{
+        width: 100%;
+        font-family: 'LeferiPoint-WhiteA';
+        position: relative;
+    }
+    header{
+        height: 80px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(16, 16, 16, 0.8);
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+    #logo{
+        width: 140px;
+    }
+    #logo img{
+        width: 100%;
+        /* height: 100%; */
+    }
+    #search{
+        width: 25px;
         cursor: pointer;
     }
     #search img{
@@ -78,6 +237,14 @@
         width: 100%;
         height: 100%;
         color: #fff;
+    }
+    #mini{
+        position: absolute;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        z-index: 9999;
     }
     
     footer{
@@ -163,7 +330,7 @@
         background-image: url(../img/main/i_youtube.png);
     }
 }
-@media screen and (min-width:751px){
+@media screen and (min-width:1300px){
     svg path{
         opacity: 0.4;
     }
@@ -244,7 +411,9 @@
         height: 100%;
         color: #fff;
     }
-    
+    #mini{
+        display: none;
+    }
     footer{
         width: 100%;
         height: 320px;
