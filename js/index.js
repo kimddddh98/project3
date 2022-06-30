@@ -19,6 +19,45 @@ $(function () {
     $('#mainmenu>li').mouseout(function(){
         $(this).find('.sub').css('display','none')
     })
+    $('#mini>li').click(function(){
+        if($(this).find('.mini_sub').css('display')=='block'){
+        $('.mini_sub').stop().slideUp();
+        }
+        else{
+            $('.mini_sub').stop().slideUp();
+            $(this).find('.mini_sub').stop().slideDown();
+        }
+    })
+    $('#click_menu').click(function(){
+        if($('#mini').css('right')=='0px'){
+
+            $('#mini').stop().animate({right:-100+'vw'},500,function(){
+            $('.mini_sub').css('display','none')
+            $('#mini').css('display','none')
+
+            })
+        }
+        else{
+            $('#mini').css('display','flex')
+
+        $('#mini').stop().animate({right:0},500)
+
+        }
+    })
+    $('#click_search').click(function(){
+        if($('#down').css('top')=='80px'){
+        $('#down').stop().animate({top:-20+'vh'},500,function(){
+            $('#down').css('display','none')
+        })
+        
+        }
+        else{
+            $('#down').css('display','flex')
+
+            $('#down').stop().animate({top:80+'px'})
+
+        }
+    })
     //메인슬라이드ㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     $('#sound_text>div:first').hover(function () {
         $(this).stop().animate({ width: 100 + '%' })
