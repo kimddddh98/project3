@@ -3,6 +3,20 @@
 // }
 
 $(function () {
+    let today=new Date();
+        let year=today.getFullYear();
+        let month=today.getMonth()+1;
+        let date=today.getDate();
+        let time=today.getHours();
+        $('.year').text(year)
+        $('.month').text(month)
+        $('.date').text(date)
+        if(time>18 || time<9){
+        $('.time').text('18:00 기준')
+        }
+        else{
+        $('.time').text(time+':00 기준')
+        }
     // svg배경ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     function ani() {
         for (var i = 0; i < $('path').length; i++) {

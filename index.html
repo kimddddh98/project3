@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>music</title>
+    <title>Music</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/main.css">
@@ -17,7 +17,7 @@
         <header>
 
             <div id="logo"><a href="#">
-                <img src="img/main/logo_transparent.png" alt="">
+                <img src="img/main/logo_transparent.png" alt="logo">
             </a></div>
             <ul id="mainmenu">
                 <li><a href="#">인기차트</a>
@@ -115,8 +115,8 @@
 
             <video src="img/main/teaser.mp4" playsinline muted id="video2"></video>
             <div id="control">
-                <div><img src="img/main/careers-arrow (1).svg" id="prev" alt=""></div>
-                <div><img id='next'src="img/main/careers-arrow.svg" alt=""></div>
+                <div><img src="img/main/careers-arrow(1).svg" id="prev" alt="arrow"></div>
+                <div><img id='next' src="img/main/careers-arrow.svg" alt="arrow"></div>
             </div>
             <div id="sound_box">
                 <div id="sound_text">
@@ -128,12 +128,12 @@
                         -album title
                         </p>
                         <div id="after"></div>
-                    <div class="go"><img src="img/main/stop.png" alt=""></div>
+                    <div class="go"><img src="img/main/stop.png" alt="stop"></div>
 
-                        <div class="go"><img src="img/main/go.png" alt=""></div>
+                        <div class="go"><img src="img/main/go.png" alt="go"></div>
                
                     </div>
-                    <div id="maincover"><img src="img/main/videocover2.jpg" alt=""></div>
+                    <div id="maincover"><img src="img/main/videocover2.jpg" alt="cover"></div>
                      </div>
                 <div id="sound_index">
                     <div><span>1</span>/<span>2</span></div>
@@ -209,7 +209,7 @@
                             <thead>
                                 <tr>
                                     <th >순위</th>
-                                    <th colspan = "2" style="width: 40%;" >제목</th>
+                                    <th colspan = "2" id="t_col">제목</th>
                                     <th >아티스트</th>
                                     <th >앨범</th>
                                 </tr>
@@ -433,24 +433,6 @@
                 </div>
             </div>
         </div>
-       <script>
-
-        // 차트 날짜/시간ㅡㅡㅡㅡㅡㅡㅡ
-        let today=new Date();
-        let year=today.getFullYear();
-        let month=today.getMonth()+1;
-        let date=today.getDate();
-        let time=today.getHours();
-        $('.year').text(year)
-        $('.month').text(month)
-        $('.date').text(date)
-        if(time>18 || time<9){
-        $('.time').text('18:00 기준')
-        }
-        else{
-        $('.time').text(time+':00 기준')
-        }
-    </script>
         <div id="story">
             <div id="story_con">
                 <div class="con_one">
@@ -485,7 +467,7 @@
        <div id="pd">
             <div>
                 <div id='pd_bg'>
-                    <div id="change"><img src="img/main/maincover.jpg" alt=""></div>
+                    <div id="change"><img src="img/main/maincover.jpg" alt="cover"></div>
                     <p>힙합 비트에 몸을 맡겨 보자 1 #국내편</p>
                     <div id="button_box">
                         <div id="pd_prev">
@@ -517,7 +499,7 @@
                 <div id="box1">
                     <div>
                     <a href="#">
-                        <img src="img/main/logo_transparent.png" alt="">
+                        <img src="img/main/logo_transparent.png" alt="foot_logo">
                     </a>
 
                     </div>
@@ -544,7 +526,7 @@
                 </div>
             </div>
         </footer>
-        <svg id="svg" class="stroke" style="background-color:#121212;">
+        <svg id="svg" class="stroke">
             <path  stroke="#bf611b" d="M -0 5000 L -1 0 C 16.3 0, 146.7 -129, 163 -129 C 179.3 -129, 309.7 129, 326 129 C 342.3 129, 472.7 -129, 489 -129 C 505.3 -129, 635.7 129, 652 129 C 668.3 129, 798.7 -129, 815 -129 C 831.3 -129, 961.7 129, 978 129 C 994.3 129, 1124.7 -129, 1141 -129 C 1157.3 -129, 1287.7 129, 1304 129 C 1320.3 129, 1450.7 -129, 1467 -129 C 1483.3 -129, 1613.7 129, 1630 129 C 1646.3 129, 1776.7 -129, 1793 -129 C 1809.3 -129, 1939.7 129, 1956 129 "></path>
             <path  stroke="#c2522d" d="M -0 5000 L -1 91 C 16.3 91, 146.7 -38, 163 -38 C 179.3 -38, 309.7 220, 326 220 C 342.3 220, 472.7 -38, 489 -38 C 505.3 -38, 635.7 220, 652 220 C 668.3 220, 798.7 -38, 815 -38 C 831.3 -38, 961.7 220, 978 220 C 994.3 220, 1124.7 -38, 1141 -38 C 1157.3 -38, 1287.7 220, 1304 220 C 1320.3 220, 1450.7 -38, 1467 -38 C 1483.3 -38, 1613.7 220, 1630 220 C 1646.3 220, 1776.7 -38, 1793 -38 C 1809.3 -38, 1939.7 220, 1956 220  "></path>
             <path stroke="#c1433e" d="M -0 5000 L -1 183 C 16.3 183, 146.7 54, 163 54 C 179.3 54, 309.7 312, 326 312 C 342.3 312, 472.7 54, 489 54 C 505.3 54, 635.7 312, 652 312 C 668.3 312, 798.7 54, 815 54 C 831.3 54, 961.7 312, 978 312 C 994.3 312, 1124.7 54, 1141 54 C 1157.3 54, 1287.7 312, 1304 312 C 1320.3 312, 1450.7 54, 1467 54 C 1483.3 54, 1613.7 312, 1630 312 C 1646.3 312, 1776.7 54, 1793 54 C 1809.3 54, 1939.7 312, 1956 312  "></path>
