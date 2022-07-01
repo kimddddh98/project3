@@ -39,25 +39,41 @@ $(function () {
         }
         else{
             $('#mini').css('display','flex')
-
-        $('#mini').stop().animate({right:0},500)
+            $('#down').stop().animate({top:-20+'vh'},500,function(){
+                $('#down').css('display','none')
+                })
+            $('#mini').stop().animate({right:0},500)
 
         }
     })
     $('#click_search').click(function(){
         if($('#down').css('top')=='80px'){
-        $('#down').stop().animate({top:-20+'vh'},500,function(){
+            $('#down').stop().animate({top:-20+'vh'},500,function(){
             $('#down').css('display','none')
-        })
-        
+            })
         }
+        else if($('#down').css('top')=='120px'){
+            $('#down').stop().animate({top:-20+'vh'},500,function(){
+                $('#down').css('display','none')
+                })
+        }
+        
         else{
+            if(window.matchMedia("(max-width: 1299px)").matches){
+                $('#down').stop().animate({top:80+'px'})
+            }
+            else{
+                $('#down').stop().animate({top:120+'px'})
+            } 
+            $('#mini').stop().animate({right:-100+'vw'},500,function(){
+                $('.mini_sub').css('display','none')
+                $('#mini').css('display','none')
+    
+                })
             $('#down').css('display','flex')
-
-            $('#down').stop().animate({top:80+'px'})
-
         }
     })
+    
     //메인슬라이드ㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     $('#sound_text>div:first').hover(function () {
         $(this).stop().animate({ width: 100 + '%' })

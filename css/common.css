@@ -120,6 +120,7 @@
         /* height: 10vh; */
         line-height: 10vh;
         /* background-color: blue; */
+        cursor: pointer;
     }
     .mini_sub{
         display: none;
@@ -132,7 +133,7 @@
         position: absolute;
         top: -20vh;
         left: 0;
-        z-index: 9999;
+        z-index: 9;
         display: none;
         justify-content: center;
         align-items: center;
@@ -296,7 +297,7 @@
         height: 25px;
         background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;
+        background-size: contain;
     }
     #search>div:nth-of-type(1){
         background-image: url(../img/main/search.png);
@@ -364,6 +365,7 @@
         /* height: 10vh; */
         line-height: 10vh;
         /* background-color: blue; */
+        cursor: pointer;
     }
     .mini_sub{
         display: none;
@@ -376,7 +378,7 @@
         position: absolute;
         top: -20vh;
         left: 0;
-        z-index: 9999;
+        z-index: 9;
         display: none;
         justify-content: center;
         align-items: center;
@@ -593,7 +595,7 @@
         position: absolute;
         top: -20vh;
         left: 0;
-        z-index: 9999;
+        z-index: 9;
         display: none;
         justify-content: center;
         align-items: center;
