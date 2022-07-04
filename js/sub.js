@@ -3,6 +3,7 @@
 // }
 
 $(function () {
+   
     // svg배경ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     function ani() {
         for (var i = 0; i < $('path').length; i++) {
@@ -73,54 +74,78 @@ $(function () {
             $('#down').css('display','flex')
         }
     })
-    function Chart(title,artist,album){
-        this.title=title;
-        this.artist=artist;
-        this.album=album;
-    }
-    const chart1=new Chart('LOVE DIVE','IVE','LOVE DIVE')
-
-    const chart2=new Chart('사랑인가봐','멜로망스','사랑인가봐')
-    const chart3=new Chart('정이라고 하자','BIG Naughty','정이라고 하자')
-    const chart4=new Chart('팡파레','다비치','Season Note')
-    
-    const chart5=new Chart('That That','싸이(PSY)','싸다9')
-    const chart6=new Chart('Yet To Come','방탄소년단','Proof')
-    const chart7=new Chart('One More Time','폴킴','star')
-    
-    const chart8={
-        title:'	봄여름가을겨울',
-        artist:'BIGBANG(빅뱅)',
-        album:'봄여름가을겨울'
-    }
-    const chart9={
-        title:'낭만교향곡',
-        artist:'BIG Naughty ',
-        album:'낭만'
-    }
-    const chart10={
-        title:'TOMBOY',
-        artist:'(여자)아이들',
-        album:'I NEVER DIE'
-    }
-  
-
-
    
     // 스크롤이벤트ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-    $(window).scroll(function () {
-        var c = $('#sound_text').offset()
-        var e = $(window).scrollTop()
-      
-        if (e > c.top) {
-            // $('header').css({
-            //     backgroundColor: rgba(16, 16, 16, 1)
-
-            // })
-            $('header').css('background-color','rgba(16,16,16,1)')
-        }
-        else{
-            $('header').css('background-color','rgba(16,16,16,0.8)')
-        }
+    var cW=document.getElementsByClassName('content_img')[0].clientWidth;
+    $('.content_left').css({
+        marginLeft:-cW+'px'
     })
+    $('.content_right').css({
+        marginLeft:cW+'px'
+    })
+    $('header').css('background-color','rgba(16,16,16,1)')
+
+    // $('.content_left').css()
+    $(window).scroll(function () {
+        // var c = $('#sound_text').offset()
+        var e = $(window).scrollTop()
+        if($('#content5').offset().top<e){
+            $('.content_right').eq(2).animate({
+                opacity: 1,
+                marginLeft:0
+            },1000)
+        }
+        if($('#content4').offset().top<e){
+            $('.content_left').eq(2).animate({
+                opacity: 1,
+                marginLeft:0
+            },1000)
+        } 
+        if($('#content3').offset().top<e){
+            $('.content_right').eq(1).animate({
+                opacity: 1,
+                marginLeft:0
+            },1000)
+        }    
+        if($('#content2').offset().top<e){
+            $('.content_left').eq(1).animate({
+                opacity: 1,
+                marginLeft:0
+            },1000)
+        }    
+        if($('#content1').offset().top<e){
+        $('.content_right').eq(0).animate({
+            opacity: 1,
+            marginLeft:0
+        },1000)    
+        }
+        $('.content_left').eq(0).animate({
+            opacity: 1,
+            marginLeft:0
+        },1000)
+    })
+
+    //자동슬라이드ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+    var autoS=document.getElementById('autoS')
+    var li=document.querySelectorAll('#autoS li');
+    autoS.style.width=li.length*480+'px'
+    function right(){
+        $('#autoS').animate({marginLeft:-480+'px'},1950,function(){
+            $('#autoS li:first').appendTo('#autoS');
+            $('#autoS').css('margin-left','0px')
+        })
+    }
+
+    $('#autoS li').mouseover(function(){
+        clearTimeout(start)
+    })
+    $('#autoS li').mouseout(function(){
+        start=setInterval(right,2000)
+    
+    })
+    start=setInterval(right,2000)
+    // $('.content_text a').hover(function(){
+    //     $(this).css({opacity:0})
+    // },function(){})
 });
+    
