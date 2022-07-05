@@ -86,6 +86,10 @@ $(function () {
     $('header').css('background-color','rgba(16,16,16,1)')
 
     // $('.content_left').css()
+    $('.content_left').eq(0).animate({
+        opacity: 1,
+        marginLeft:0
+    },1000)
     $(window).scroll(function () {
         // var c = $('#sound_text').offset()
         var e = $(window).scrollTop()
@@ -119,10 +123,7 @@ $(function () {
             marginLeft:0
         },1000)    
         }
-        $('.content_left').eq(0).animate({
-            opacity: 1,
-            marginLeft:0
-        },1000)
+        
     })
 
     //자동슬라이드ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
@@ -144,17 +145,41 @@ $(function () {
             $('#autoS').css('margin-left','0px')
         })
     }
-    $('#autoS li').mouseover(function(){
-        clearTimeout(start)
-    })
-    $('#autoS li').mouseout(function(){
-        start=setInterval(right,3000)
+    // $('#autoS li').mouseover(function(){
+    //     clearTimeout(start)
+    // })
+    // $('#autoS li').mouseout(function(){
+    //     start=setInterval(right,3000)
     
+    // })
+    // start=setInterval(right,2000)
+    $('.content_text a').hover(function(){
+        $(this).css({opacity:0})
+    },function(){})
+    // autoS.onclick=function(){
+    //     s()
+    // }
+    var ev;
+    autoS.addEventListener('dragstart',function(){
+        autoS.ondrag=function(e){
+            // $('#autoS').animate({marginLeft:e.clientX+'px'})
+            $('#autoS').css({marginLeft:-e.clientX+'px'})
+            if(e.clientX>=autoWidth){
+                ev=e.clientX;
+            }
+        }
     })
-    start=setInterval(right,2000)
-    // $('.content_text a').hover(function(){
-    //     $(this).css({opacity:0})
-    // },function(){})
+    autoS.addEventListener('dragend',function(){
+        // $('#autoS').css({marginLeft:600})
+        if(ev>=autoWidth){
+            let autoWidth=li[0].clientWidth;
+        $('#autoS').css({marginLeft:-autoWidth+'px'})
+        $('#autoS li:first').appendTo('#autoS');
+        $('#autoS').css('margin-left','0px')
+        ev=0
+        }
+    })
+            
 });
 
     
