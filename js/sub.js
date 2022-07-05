@@ -126,21 +126,29 @@ $(function () {
     })
 
     //자동슬라이드ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+    
     var autoS=document.getElementById('autoS')
     var li=document.querySelectorAll('#autoS li');
-    autoS.style.width=li.length*480+'px'
+    var autoWidth=li[0].clientWidth;
+    autoS.style.width=li.length*autoWidth+10+'px'
+    window.addEventListener('resize',function(){
+        let autoS=document.getElementById('autoS')
+        let li=document.querySelectorAll('#autoS li');
+        let autoWidth=li[0].clientWidth;
+        autoS.style.width=li.length*autoWidth+10+'px'
+    })
     function right(){
-        $('#autoS').animate({marginLeft:-480+'px'},1950,function(){
+        let autoWidth=li[0].clientWidth;
+        $('#autoS').animate({marginLeft:-autoWidth+'px'},1950,function(){
             $('#autoS li:first').appendTo('#autoS');
             $('#autoS').css('margin-left','0px')
         })
     }
-
     $('#autoS li').mouseover(function(){
         clearTimeout(start)
     })
     $('#autoS li').mouseout(function(){
-        start=setInterval(right,2000)
+        start=setInterval(right,3000)
     
     })
     start=setInterval(right,2000)
@@ -148,4 +156,5 @@ $(function () {
     //     $(this).css({opacity:0})
     // },function(){})
 });
+
     
