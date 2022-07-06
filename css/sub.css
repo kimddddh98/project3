@@ -69,6 +69,7 @@
         /* top: -100px; */
         /* background-color: #000; */
         overflow: hidden;
+        /* display: none;/ */
     
     }
     #content>div{
@@ -447,7 +448,112 @@
         top: -100px;
         /* background-color: #000; */
         overflow: hidden;
+        /* display: none; */
     
+    }
+    #mv{
+        background-color: #fff;
+        width: 1300px;
+        height: 1400px;
+        margin: 0 auto;
+        position: relative;
+        top: -100px;
+        right: -100vw;
+        /* background-color: #000; */
+        overflow: hidden;
+        display: none;
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #mv>div{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: space-around;
+     
+    }
+    .mvbox{
+        width: 30%;
+        height: 100%;
+        background-color: aqua;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        cursor: pointer;
+    }
+    .mvbox>p{
+        text-align: center;
+        width: 100%;
+        padding: 8px 0;
+        background-color: rgba(255, 255, 255,0.8);
+    }
+    .mvbox>div{
+        width: 25%;
+        height: 25%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        /* background-color: #000; */
+        background-image: url(../img/sub/go.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    .m1{
+        background-image: url(../img/sub/v1.jpg);
+    }
+    .m2{
+        background-image: url(../img/sub/v2.jpg);
+    }
+    .m3{
+        background-image: url(../img/sub/v3.jpg);
+    }
+    .m4{
+        background-image: url(../img/sub/v4.jpg);
+    }
+    .m5{
+        background-image: url(../img/sub/v5.jpg);
+    }
+    .m6{
+        background-image: url(../img/sub/v6.jpg);
+    }
+    .m7{
+        background-image: url(../img/sub/v7.jpg);
+    }
+    .m8{
+        background-image: url(../img/sub/v8.jpg);
+    }
+    .m9{
+        background-image: url(../img/sub/v9.jpg);
+    }
+    #play{
+        width: 100vw;
+        height: 100vh;
+        background-color:rgba(0,0,0,0.4);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    #play iframe{
+        width: 50vw;
+        height: 50vh;
+    }
+    #play span{
+        /* align-self: flex-start; */
+        font-size: 30px;
+        position: absolute;
+        top: 20vh;
+        left: 73vw;
+        cursor: pointer;
     }
     #content>div{
         width: 100%;
