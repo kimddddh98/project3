@@ -452,14 +452,12 @@
     
     }
     #mv{
-        background-color: #fff;
         width: 1300px;
         height: 1400px;
         margin: 0 auto;
         position: relative;
         top: -100px;
         right: -100vw;
-        /* background-color: #000; */
         overflow: hidden;
         display: none;
         /* display: flex; */
@@ -476,7 +474,6 @@
     .mvbox{
         width: 30%;
         height: 100%;
-        background-color: aqua;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -489,7 +486,7 @@
         text-align: center;
         width: 100%;
         padding: 8px 0;
-        background-color: rgba(255, 255, 255,0.8);
+        /* background-color: rgba(255, 255, 255,0.8); */
     }
     .mvbox>div{
         width: 25%;
@@ -530,6 +527,15 @@
     }
     .m9{
         background-image: url(../img/sub/v9.jpg);
+    }
+    .m10{
+        background-image: url(../img/sub/v10.jpg);
+    }
+    .m11{
+        background-image: url(../img/sub/v11.jpg);
+    }
+    .m12{
+        background-image: url(../img/sub/v12.jpg);
     }
     #play{
         width: 100vw;
