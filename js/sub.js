@@ -8,7 +8,7 @@ $(function () {
     }
     ani();
     setInterval(ani, 18000)
- 
+    $('#mini>li>a').eq(3).css('color','red')
     $('#mainmenu>li').mouseover(function(){
         $(this).find('.sub').css('display','block')
     })
@@ -153,12 +153,15 @@ $(function () {
         $('#mv').css({right:-100+'vw'})
         $('#content').show()
         $('#content').animate({right:0})
+        $('#slider p').html('당신을 위한 추천 앨범')
+
     })
     $('#tap>ul>li>a').eq(1).click(function(){
         $('#content').hide()
         $('#content').css({right:-100+'vw'})
         $('#mv').css('display','flex')
         $('#mv').animate({right:0});
+        $('#slider p').html('당신을 위한 추천 M/V')
     })
     $('#tap>ul>li>a').click(function(){
         $(this).css({color:'red',fontWeight:'bold'});
@@ -174,6 +177,11 @@ $(function () {
         let so=$(this).attr('title')
         $('#play').css('display','flex')
         $('#play iframe').attr('src',so)
+    })
+    $('.mvbox').hover(function(){
+        $(this).css('background-size','115%')
+    },function(){
+        $(this).css('background-size','cover')
     })
     // autoS.onclick=function(){
     //     s()
