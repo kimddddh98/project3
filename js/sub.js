@@ -151,6 +151,8 @@ $(function () {
     $('#tap>ul>li>a').eq(0).click(function(){
         $('#mv').hide()
         $('#mv').css({right:-100+'vw'})
+        $('#playList').hide()
+        $('#playList').css({right:-100+'vw'})
         $('#content').show()
         $('#content').animate({right:0})
         $('#slider p').html('당신을 위한 추천 앨범')
@@ -159,8 +161,19 @@ $(function () {
     $('#tap>ul>li>a').eq(1).click(function(){
         $('#content').hide()
         $('#content').css({right:-100+'vw'})
+        $('#playList').hide()
+        $('#playList').css({right:-100+'vw'})
         $('#mv').css('display','flex')
         $('#mv').animate({right:0});
+        $('#slider p').html('당신을 위한 추천 M/V')
+    })
+    $('#tap>ul>li>a').eq(2).click(function(){
+        $('#content').hide()
+        $('#content').css({right:-100+'vw'})
+        $('#mv').hide()
+        $('#mv').css({right:-100+'vw'})
+        $('#playList').css('display','flex')
+        $('#playList').animate({right:0});
         $('#slider p').html('당신을 위한 추천 M/V')
     })
     $('#tap>ul>li>a').click(function(){
