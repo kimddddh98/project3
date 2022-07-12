@@ -222,27 +222,27 @@ $(function () {
     }
     
     $('#listbox1').mouseover(function(){
-            arrpush1()            
-            $(this).stop().css('background-image',imgUrl1[0]+','+imgUrl1[1]+','+imgUrl1[2])
+        arrpush1();           
+        $(this).stop().css('background-image',imgUrl1[0]+','+imgUrl1[1]+','+imgUrl1[2])
     })
     $('#listbox2').mouseover(function(){
-        arrpush2()            
+        arrpush2();          
         $(this).stop().css('background-image',imgUrl2[0]+','+imgUrl2[1]+','+imgUrl2[2])
     })
     $('#listbox3').mouseover(function(){
-        arrpush3()            
+        arrpush3();            
         $(this).stop().css('background-image',imgUrl3[0]+','+imgUrl3[1]+','+imgUrl3[2])
     })
     $('#listbox4').mouseover(function(){
-        arrpush4()            
+        arrpush4();            
         $(this).stop().css('background-image',imgUrl4[0]+','+imgUrl4[1]+','+imgUrl4[2])
     })
     $('#listbox5').mouseover(function(){
-        arrpush5()            
+        arrpush5();            
         $(this).stop().css('background-image',imgUrl5[0]+','+imgUrl5[1]+','+imgUrl5[2])
     })
     $('#listbox6').mouseover(function(){
-        arrpush6()            
+        arrpush6();            
         $(this).stop().css('background-image',imgUrl6[0]+','+imgUrl6[1]+','+imgUrl6[2])
     })
 });
