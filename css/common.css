@@ -42,7 +42,6 @@
     }
     #logo{
         width: 110px;
-        /* height: 100%; */
     }
     #logo img{
         width: 100%;
@@ -56,7 +55,6 @@
         align-items: center;
     }
     #search>div{
-        /* background-color: aqua; */
         width: 20px;
         height: 20px;
         background-repeat: no-repeat;
@@ -104,14 +102,12 @@
     }
     #mini{
         position: fixed;
-        /* display: none; */
         width: 100vw;
         height: 100vh;
         background-color: rgba(16, 16, 16, 1);
         z-index: 9999;
         display: flex;
         flex-direction: column;
-        /* justify-content: space-around; */
         align-items: center;
         top: 80px;
         right: -100vw;
@@ -122,9 +118,7 @@
     #mini li{
         width: 100%;
         text-align: center;
-        /* height: 10vh; */
         line-height: 10vh;
-        /* background-color: blue; */
         cursor: pointer;
     }
     .mini_sub{
@@ -145,9 +139,7 @@
     }
     
     #down>div{
-        /* background-color: aqua; */
         width: 50%;
-        /* background-color: aqua; */
         display: flex;
     }
     #down>div>input{
@@ -192,7 +184,6 @@
         align-items: center;
     }
     #box1>div{
-        /* background-color: red; */
         width: 100%;
         height: 50%;
     }
@@ -210,7 +201,6 @@
    
     #box2 ul{
         width: 40%;
-        /* height: 20%; */
     }
     #box2>div{
         width: 40%;
@@ -290,7 +280,6 @@
     }
     #logo img{
         width: 100%;
-        /* height: 100%; */
     }
     #search{
         width: 70px;
@@ -300,7 +289,6 @@
         align-items: center;
     }
     #search>div{
-        /* background-color: aqua; */
         width: 25px;
         height: 25px;
         background-repeat: no-repeat;
@@ -316,10 +304,6 @@
         width: 30px;
         height: 35px;
     }
-    /* #search img{
-        width: 100%;
-        height: 100%;
-    } */
     #mainmenu{
         width: 50%;
         height: 100%;
@@ -357,9 +341,7 @@
         height: 100vh;
         background-color: rgba(16, 16, 16, 1);
         z-index: 9999;
-        /* display: flex; */
         flex-direction: column;
-        /* justify-content: space-around; */
         align-items: center;
         top: 80px;
         right: -100vw;
@@ -370,9 +352,7 @@
     #mini li{
         width: 100%;
         text-align: center;
-        /* height: 10vh; */
         line-height: 10vh;
-        /* background-color: blue; */
         cursor: pointer;
     }
     .mini_sub{
@@ -393,9 +373,7 @@
     }
     
     #down>div{
-        /* background-color: aqua; */
         width: 50%;
-        /* background-color: aqua; */
         display: flex;
     }
     #down>div>input{
@@ -441,7 +419,6 @@
         align-items: center;
     }
     #box1>div{
-        /* background-color: red; */
         width: 100%;
         height: 50%;
     }
@@ -459,7 +436,6 @@
    
     #box2 ul{
         width: 40%;
-        /* height: 20%; */
     }
     #box2>div{
         width: 40%;
@@ -549,7 +525,6 @@
         cursor: pointer;
     }
     #search>div{
-        /* background-color: aqua; */
         width: 20px;
         height: 20px;
         background-repeat: no-repeat;
@@ -611,9 +586,7 @@
     }
     
     #down>div{
-        /* background-color: aqua; */
         width: 50%;
-        /* background-color: aqua; */
         display: flex;
     }
     #down>div>input{
@@ -658,7 +631,6 @@
         align-items: center;
     }
     #box1>div{
-        /* background-color: red; */
         width: 80%;
         height: 70%;
     }
@@ -675,9 +647,6 @@
     }
     #box2 ul{
         width: 100%;;
-        /* padding-bottom: 10px; */
-        /* height: 20%; */
-        /* text-align: center; */
         display: flex;
         align-self: center;
     }
@@ -692,7 +661,6 @@
     }
     #box2 p{
         width: 100%;
-        /* height: 15%; */
         color: #aaa;
         padding: 10px 0;
     }
@@ -720,12 +688,4 @@
     }
     
 }
-/* #auto li{
-    position: relative;
-}
-#auto li>div{
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    position: absolute;
-} */
+

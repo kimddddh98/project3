@@ -174,13 +174,12 @@ $(function () {
         $('#mv').css({right:-100+'vw'})
         $('#playList').css('display','flex')
         $('#playList').animate({right:0});
-        $('#slider p').html('당신을 위한 추천 M/V')
+        $('#slider p').html('당신을 위한 추천 Play-List')
     })
     $('#tap>ul>li>a').click(function(){
         $(this).css({color:'red',fontWeight:'bold'});
         $(this).parent().siblings().find('a').css({color:'#fff',fontWeight:'normal'});
     })
-
     $('#play span').click(function(){
         $('#play').hide()
         $('#play iframe').attr('src','')
@@ -191,33 +190,61 @@ $(function () {
         $('#play').css('display','flex')
         $('#play iframe').attr('src',so)
     })
-    $('.mvbox').hover(function(){
-        $(this).css('background-size','115%')
-    },function(){
-        $(this).css('background-size','cover')
+    let imgUrl1=['url(../img/sub/list1_1.jpg)','url(../img/sub/content4.jpg)','url(../img/sub/list1_2.jpg)']
+    let imgUrl2=['url(../img/sub/pd4.jpg)',' url(../img/sub/list2_2.jpg)', 'url(../img/sub/list2_3.jpg)']
+    let imgUrl3=['url(../img/sub/pd2.jpg)',' url(../img/sub/list3_2.jpg)', 'url(../img/sub/list3_3.jpg)']
+    let imgUrl4=['url(../img/sub/pd5.jpg)',' url(../img/sub/list4-2.jpg)', 'url(../img/sub/list4-3.jpg)']
+    let imgUrl5=['url(../img/sub/pd1.jpg)',' url(../img/sub/list5_2.jpg)', 'url(../img/sub/list5_3.jpg)']
+    let imgUrl6=['url(../img/sub/content5.jpg)',' url(../img/sub/list6_2.jpg)', 'url(../img/sub/list6_3.jpg)']
+    function arrpush1(){
+            imgUrl1.push(imgUrl1[0]);
+            imgUrl1.shift();
+    }
+    function arrpush2(){
+        imgUrl2.push(imgUrl2[0]);
+        imgUrl2.shift();
+    }
+    function arrpush3(){
+        imgUrl3.push(imgUrl3[0]);
+        imgUrl3.shift();
+    }
+    function arrpush4(){
+        imgUrl4.push(imgUrl4[0]);
+        imgUrl4.shift();
+    }
+    function arrpush5(){
+        imgUrl5.push(imgUrl5[0]);
+        imgUrl5.shift();
+    }
+    function arrpush6(){
+        imgUrl6.push(imgUrl6[0]);
+        imgUrl6.shift();
+    }
+    
+    $('#listbox1').mouseover(function(){
+            arrpush1()            
+            $(this).stop().css('background-image',imgUrl1[0]+','+imgUrl1[1]+','+imgUrl1[2])
     })
-    // autoS.onclick=function(){
-    //     s()
-    // }
-    // var ev
-    // autoS.addEventListener('dragstart',function(e){
-        
-    //         $('#autoS').stop().animate({marginLeft:-autoWidth+'px'},function(){
-    //             $('#autoS').css({marginLeft:0+'px'})
-    //             $('#autoS li:first').appendTo('#autoS');
-    //             })
-    //         console.log(e.x)
-    // })
-    // autoS.addEventListener('dragend',function(){
-    //     // $('#autoS').css({marginLeft:600})
-    //     if(ev>=autoWidth){
-    //         let autoWidth=li[0].clientWidth;
-    //     $('#autoS').css({marginLeft:-autoWidth+'px'})
-    //     $('#autoS li:first').appendTo('#autoS');
-    //     $('#autoS').css('margin-left','0px')
-    //     ev=0
-    //     }
-    // })
+    $('#listbox2').mouseover(function(){
+        arrpush2()            
+        $(this).stop().css('background-image',imgUrl2[0]+','+imgUrl2[1]+','+imgUrl2[2])
+    })
+    $('#listbox3').mouseover(function(){
+        arrpush3()            
+        $(this).stop().css('background-image',imgUrl3[0]+','+imgUrl3[1]+','+imgUrl3[2])
+    })
+    $('#listbox4').mouseover(function(){
+        arrpush4()            
+        $(this).stop().css('background-image',imgUrl4[0]+','+imgUrl4[1]+','+imgUrl4[2])
+    })
+    $('#listbox5').mouseover(function(){
+        arrpush5()            
+        $(this).stop().css('background-image',imgUrl5[0]+','+imgUrl5[1]+','+imgUrl5[2])
+    })
+    $('#listbox6').mouseover(function(){
+        arrpush6()            
+        $(this).stop().css('background-image',imgUrl6[0]+','+imgUrl6[1]+','+imgUrl6[2])
+    })
 });
 
     
