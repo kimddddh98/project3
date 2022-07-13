@@ -190,12 +190,12 @@ $(function () {
         $('#play').css('display','flex')
         $('#play iframe').attr('src',so)
     })
-    const imgUrl1=['url("../img/sub/list1_1.jpg")','url("../img/sub/content4.jpg")','url("../img/sub/list1_2.jpg")']
-    const imgUrl2=['url(../img/sub/pd4.jpg)',' url(../img/sub/list2_2.jpg)', 'url(../img/sub/list2_3.jpg)']
-    const imgUrl3=['url(../img/sub/pd2.jpg)',' url(../img/sub/list3_2.jpg)', 'url(../img/sub/list3_3.jpg)']
-    const imgUrl4=['url(../img/sub/pd5.jpg)',' url(../img/sub/list4-2.jpg)', 'url(../img/sub/list4-3.jpg)']
-    const imgUrl5=['url(../img/sub/pd1.jpg)',' url(../img/sub/list5_2.jpg)', 'url(../img/sub/list5_3.jpg)']
-    const imgUrl6=['url(../img/sub/content5.jpg)',' url(../img/sub/list6_2.jpg)', 'url(../img/sub/list6_3.jpg)']
+    const imgUrl1=['url("~/../img/sub/list1_1.jpg")','url("~/../img/sub/content4.jpg")','url("~/../img/sub/list1_2.jpg")']
+    const imgUrl2=['url(~/../img/sub/pd4.jpg)',' url(~/../img/sub/list2_2.jpg)', 'url(~/../img/sub/list2_3.jpg)']
+    const imgUrl3=['url(~/../img/sub/pd2.jpg)',' url(~/../img/sub/list3_2.jpg)', 'url(~/../img/sub/list3_3.jpg)']
+    const imgUrl4=['url(~/../img/sub/pd5.jpg)',' url(~/../img/sub/list4-2.jpg)', 'url(~/../img/sub/list4-3.jpg)']
+    const imgUrl5=['url(~/../img/sub/pd1.jpg)',' url(~/../img/sub/list5_2.jpg)', 'url(~/../img/sub/list5_3.jpg)']
+    const imgUrl6=['url(~/../img/sub/content5.jpg)',' url(~/../img/sub/list6_2.jpg)', 'url(~/../img/sub/list6_3.jpg)']
     function arrpush1(){
         imgUrl1.push(imgUrl1[0]);
         imgUrl1.shift();
@@ -220,7 +220,9 @@ $(function () {
         imgUrl6.push(imgUrl6[0]);
         imgUrl6.shift();
     }
+    
     const listbox1=document.getElementById('listbox1');
+    // const box9='1'
     listbox1.addEventListener('mouseover',function(){
         imgUrl1.push(imgUrl1[0]);
         imgUrl1.shift();
