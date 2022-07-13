@@ -190,69 +190,85 @@ $(function () {
         $('#play').css('display','flex')
         $('#play iframe').attr('src',so)
     })
-    const imgUrl1=['url("~/../img/sub/list1_1.jpg")','url("~/../img/sub/content4.jpg")','url("~/../img/sub/list1_2.jpg")']
-    const imgUrl2=['url(~/../img/sub/pd4.jpg)',' url(~/../img/sub/list2_2.jpg)', 'url(~/../img/sub/list2_3.jpg)']
-    const imgUrl3=['url(~/../img/sub/pd2.jpg)',' url(~/../img/sub/list3_2.jpg)', 'url(~/../img/sub/list3_3.jpg)']
-    const imgUrl4=['url(~/../img/sub/pd5.jpg)',' url(~/../img/sub/list4-2.jpg)', 'url(~/../img/sub/list4-3.jpg)']
-    const imgUrl5=['url(~/../img/sub/pd1.jpg)',' url(~/../img/sub/list5_2.jpg)', 'url(~/../img/sub/list5_3.jpg)']
-    const imgUrl6=['url(~/../img/sub/content5.jpg)',' url(~/../img/sub/list6_2.jpg)', 'url(~/../img/sub/list6_3.jpg)']
-    function arrpush1(){
-        imgUrl1.push(imgUrl1[0]);
-        imgUrl1.shift();
-        listbox1.style.backgroundImage= imgUrl1[0]+','+imgUrl1[1]+','+imgUrl1[2]
+    // const imgUrl1=['url("~/../img/sub/list1_1.jpg")','url("~/../img/sub/content4.jpg")','url("~/../img/sub/list1_2.jpg")']
+    // const imgUrl2=['url("~/../img/sub/pd4.jpg")',' url("~/../img/sub/list2_2.jpg")', 'url("~/../img/sub/list2_3.jpg")']
+    // const imgUrl3=['url("~/../img/sub/pd2.jpg")',' url("~/../img/sub/list3_2.jpg")', 'url("~/../img/sub/list3_3.jpg")']
+    // const imgUrl4=['url("~/../img/sub/pd5.jpg")',' url("~/../img/sub/list4-2.jpg")', 'url("~/../img/sub/list4-3.jpg")']
+    // const imgUrl5=['url("~/../img/sub/pd1.jpg")',' url("~/../img/sub/list5_2.jpg")', 'url("~/../img/sub/list5_3.jpg")']
+    // const imgUrl6=['url("~/../img/sub/content5.jpg")',' url("~/../img/sub/list6_2.jpg")', 'url("~/../img/sub/list6_3.jpg")']
+    const imgUrl=[
+        ['url("~/../img/sub/list1_1.jpg")','url("~/../img/sub/content4.jpg")','url("~/../img/sub/list1_2.jpg")'],
+        ['url("~/../img/sub/pd4.jpg")',' url("~/../img/sub/list2_2.jpg")', 'url("~/../img/sub/list2_3.jpg")'],
+        ['url("~/../img/sub/pd2.jpg")',' url("~/../img/sub/list3_2.jpg")', 'url("~/../img/sub/list3_3.jpg")'],
+        ['url("~/../img/sub/pd5.jpg")',' url("~/../img/sub/list4-2.jpg")', 'url("~/../img/sub/list4-3.jpg")'],
+        ['url("~/../img/sub/pd1.jpg")',' url("~/../img/sub/list5_2.jpg")', 'url("~/../img/sub/list5_3.jpg")'],
+        ['url("~/../img/sub/content5.jpg")',' url("~/../img/sub/list6_2.jpg")', 'url("~/../img/sub/list6_3.jpg")']
+    ]
+    var listBox=document.querySelectorAll('.listbox');
+    for(let i=0;i<listBox.length;i++){
+        listBox[i].addEventListener('mouseover',function(){
+                imgUrl[i].push(imgUrl[i][0]);
+                imgUrl[i].shift();
+            listBox[i].style.backgroundImage= imgUrl[i][0]+','+imgUrl[i][1]+','+imgUrl[i][2]
+        })
     }
-    function arrpush2(){
-        imgUrl2.push(imgUrl2[0]);
-        imgUrl2.shift();
-    }
-    function arrpush3(){
-        imgUrl3.push(imgUrl3[0]);
-        imgUrl3.shift();
-    }
-    function arrpush4(){
-        imgUrl4.push(imgUrl4[0]);
-        imgUrl4.shift();
-    }
-    function arrpush5(){
-        imgUrl5.push(imgUrl5[0]);
-        imgUrl5.shift();
-    }
-    function arrpush6(){
-        imgUrl6.push(imgUrl6[0]);
-        imgUrl6.shift();
-    }
-    
-    const listbox1=document.getElementById('listbox1');
-    listbox1.addEventListener('mouseover',function(){
-       arrpush1()
-    })
-    // $('#listbox1').mouseover(function(){
-    //     // arrpush1();        
+    // const listbox1=document.getElementById('listbox1');
+    // const listbox2=document.getElementById('listbox2');
+    // const listbox3=document.getElementById('listbox3');
+    // const listbox4=document.getElementById('listbox4');
+    // const listbox5=document.getElementById('listbox5');
+    // const listbox6=document.getElementById('listbox6');
+
+    // function arrpush1(){
     //     imgUrl1.push(imgUrl1[0]);
     //     imgUrl1.shift();
-    //     console.log($(this).css)   
-    //     $(this).stop().css('background-image',imgUrl1[0]+','+imgUrl1[1]+','+imgUrl1[2])
+    //     listbox1.style.backgroundImage= imgUrl1[0]+','+imgUrl1[1]+','+imgUrl1[2]
+    // }
+    // function arrpush2(){
+    //     imgUrl2.push(imgUrl2[0]);
+    //     imgUrl2.shift();
+    //     listbox2.style.backgroundImage= imgUrl2[0]+','+imgUrl2[1]+','+imgUrl2[2]
+    // }
+    // function arrpush3(){
+    //     imgUrl3.push(imgUrl3[0]);
+    //     imgUrl3.shift();
+    //     listbox3.style.backgroundImage= imgUrl3[0]+','+imgUrl3[1]+','+imgUrl3[2]
+    // }
+    // function arrpush4(){
+    //     imgUrl4.push(imgUrl4[0]);
+    //     imgUrl4.shift();
+    //     listbox4.style.backgroundImage= imgUrl4[0]+','+imgUrl4[1]+','+imgUrl4[2]
+
+    // }
+    // function arrpush5(){
+    //     imgUrl5.push(imgUrl5[0]);
+    //     imgUrl5.shift();
+    //     listbox5.style.backgroundImage= imgUrl5[0]+','+imgUrl5[1]+','+imgUrl5[2]
+    // }
+    // function arrpush6(){
+    //     imgUrl6.push(imgUrl6[0]);
+    //     imgUrl6.shift();
+    //     listbox6.style.backgroundImage= imgUrl6[0]+','+imgUrl6[1]+','+imgUrl6[2]
+    // }
+
+    // listbox1.addEventListener('mouseover',function(){
+    //    arrpush1()
     // })
-    $('#listbox2').mouseover(function(){
-        arrpush2();          
-        $(this).stop().css('background-image',imgUrl2[0]+','+imgUrl2[1]+','+imgUrl2[2])
-    })
-    $('#listbox3').mouseover(function(){
-        arrpush3();            
-        $(this).stop().css('background-image',imgUrl3[0]+','+imgUrl3[1]+','+imgUrl3[2])
-    })
-    $('#listbox4').mouseover(function(){
-        arrpush4();            
-        $(this).stop().css('background-image',imgUrl4[0]+','+imgUrl4[1]+','+imgUrl4[2])
-    })
-    $('#listbox5').mouseover(function(){
-        arrpush5();            
-        $(this).stop().css('background-image',imgUrl5[0]+','+imgUrl5[1]+','+imgUrl5[2])
-    })
-    $('#listbox6').mouseover(function(){
-        arrpush6();            
-        $(this).stop().css('background-image',imgUrl6[0]+','+imgUrl6[1]+','+imgUrl6[2])
-    })
+    // listbox2.addEventListener('mouseover',function(){
+    //     arrpush2()
+    //  })
+    //  listbox3.addEventListener('mouseover',function(){
+    //     arrpush3()
+    //  })
+    //  listbox4.addEventListener('mouseover',function(){
+    //     arrpush4()
+    //  })
+    //  listbox5.addEventListener('mouseover',function(){
+    //     arrpush5()
+    //  })
+    //  listbox6.addEventListener('mouseover',function(){
+    //     arrpush6()
+    //  })
 });
 
     
