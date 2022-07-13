@@ -190,7 +190,7 @@ $(function () {
         $('#play').css('display','flex')
         $('#play iframe').attr('src',so)
     })
-    let imgUrl1=['url(../img/sub/list1_1.jpg)','url(../img/sub/content4.jpg)','url(../img/sub/list1_2.jpg)']
+    const imgUrl1=['url(../img/sub/list1_1.jpg)','url(../img/sub/content4.jpg)','url(../img/sub/list1_2.jpg)']
     let imgUrl2=['url(../img/sub/pd4.jpg)',' url(../img/sub/list2_2.jpg)', 'url(../img/sub/list2_3.jpg)']
     let imgUrl3=['url(../img/sub/pd2.jpg)',' url(../img/sub/list3_2.jpg)', 'url(../img/sub/list3_3.jpg)']
     let imgUrl4=['url(../img/sub/pd5.jpg)',' url(../img/sub/list4-2.jpg)', 'url(../img/sub/list4-3.jpg)']
