@@ -197,8 +197,8 @@ $(function () {
     let imgUrl5=['url(../img/sub/pd1.jpg)',' url(../img/sub/list5_2.jpg)', 'url(../img/sub/list5_3.jpg)']
     let imgUrl6=['url(../img/sub/content5.jpg)',' url(../img/sub/list6_2.jpg)', 'url(../img/sub/list6_3.jpg)']
     function arrpush1(){
-            imgUrl1.push(imgUrl1[0]);
-            imgUrl1.shift();
+        imgUrl1.push(imgUrl1[0]);
+        imgUrl1.shift();
     }
     function arrpush2(){
         imgUrl2.push(imgUrl2[0]);
@@ -222,7 +222,9 @@ $(function () {
     }
     
     $('#listbox1').mouseover(function(){
-        arrpush1();           
+        // arrpush1();        
+        imgUrl1.push(imgUrl1[0]);
+        imgUrl1.shift();   
         $(this).stop().css('background-image',imgUrl1[0]+','+imgUrl1[1]+','+imgUrl1[2])
     })
     $('#listbox2').mouseover(function(){
