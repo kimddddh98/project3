@@ -199,6 +199,7 @@ $(function () {
     function arrpush1(){
         imgUrl1.push(imgUrl1[0]);
         imgUrl1.shift();
+        listbox1.style.backgroundImage= imgUrl1[0]+','+imgUrl1[1]+','+imgUrl1[2]
     }
     function arrpush2(){
         imgUrl2.push(imgUrl2[0]);
@@ -222,11 +223,8 @@ $(function () {
     }
     
     const listbox1=document.getElementById('listbox1');
-    // const box9='1'
     listbox1.addEventListener('mouseover',function(){
-        imgUrl1.push(imgUrl1[0]);
-        imgUrl1.shift();
-        listbox1.style.backgroundImage= imgUrl1[0]+','+imgUrl1[1]+','+imgUrl1[2]
+       arrpush1()
     })
     // $('#listbox1').mouseover(function(){
     //     // arrpush1();        
