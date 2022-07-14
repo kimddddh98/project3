@@ -304,62 +304,62 @@ $(function () {
         this.album=album;
     }
     const chart1=new Chart('LOVE DIVE','IVE','LOVE DIVE')
-
     const chart2=new Chart('사랑인가봐','멜로망스','사랑인가봐')
     const chart3=new Chart('정이라고 하자','BIG Naughty','정이라고 하자')
     const chart4=new Chart('팡파레','다비치','Season Note')
-    
     const chart5=new Chart('That That','싸이(PSY)','싸다9')
     const chart6=new Chart('Yet To Come','방탄소년단','Proof')
     const chart7=new Chart('One More Time','폴킴','star')
+    const chart8=new Chart('봄여름가을겨울','BIGBANG(빅뱅)','봄여름가을겨울')
+    const chart9=new Chart('낭만교향곡','BIG Naughty','낭만')
+    const chart10=new Chart('TOMBOY','(여자)아이들','I NEVER DIE');
     
-    const chart8={
-        title:'	봄여름가을겨울',
-        artist:'BIGBANG(빅뱅)',
-        album:'봄여름가을겨울'
-    }
-    const chart9={
-        title:'낭만교향곡',
-        artist:'BIG Naughty ',
-        album:'낭만'
-    }
-    const chart10={
-        title:'TOMBOY',
-        artist:'(여자)아이들',
-        album:'I NEVER DIE'
-    }
+    $.ajax({
+        url:"../js/indexJson.json",
+        dataType:"json",
+    })
+    .done(function(data){
+        console.log(data)
+        for(let i=0;i<data.length;i++){
+            $('tbody>tr>td').find(`img[alt=${i+1}]`).parent().siblings('.title').text(data[i].title)
+            .siblings('.artist').text(data[i].artist)
+            .siblings('.album').text(data[i].album)
+        }
+        
+    })
+    
     // table 복제ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     $('.table').appendTo('.chart');
-    $('tbody>tr>td').find('img[alt=1]').parent().siblings('.title').text(chart1.title)
-    .siblings('.artist').text(chart1.artist)
-    .siblings('.album').text(chart1.album)
-    $('tbody>tr>td').find('img[alt=2]').parent().siblings('.title').text(chart2.title)
-    .siblings('.artist').text(chart2.artist)
-    .siblings('.album').text(chart2.album)
-    $('tbody>tr>td').find('img[alt=3]').parent().siblings('.title').text(chart3.title)
-    .siblings('.artist').text(chart3.artist)
-    .siblings('.album').text(chart3.album)
-    $('tbody>tr>td').find('img[alt=4]').parent().siblings('.title').text(chart4.title)
-    .siblings('.artist').text(chart4.artist)
-    .siblings('.album').text(chart4.album)
-    $('tbody>tr>td').find('img[alt=5]').parent().siblings('.title').text(chart5.title)
-    .siblings('.artist').text(chart5.artist)
-    .siblings('.album').text(chart5.album)
-    $('tbody>tr>td').find('img[alt=6]').parent().siblings('.title').text(chart6.title)
-    .siblings('.artist').text(chart6.artist)
-    .siblings('.album').text(chart6.album)
-    $('tbody>tr>td').find('img[alt=7]').parent().siblings('.title').text(chart7.title)
-    .siblings('.artist').text(chart7.artist)
-    .siblings('.album').text(chart7.album)
-    $('tbody>tr>td').find('img[alt=8]').parent().siblings('.title').text(chart8.title)
-    .siblings('.artist').text(chart8.artist)
-    .siblings('.album').text(chart8.album)
-    $('tbody>tr>td').find('img[alt=9]').parent().siblings('.title').text(chart9.title)
-    .siblings('.artist').text(chart9.artist)
-    .siblings('.album').text(chart9.album)
-    $('tbody>tr>td').find('img[alt=10]').parent().siblings('.title').text(chart10.title)
-    .siblings('.artist').text(chart10.artist)
-    .siblings('.album').text(chart10.album)
+    // $('tbody>tr>td').find('img[alt=1]').parent().siblings('.title').text(chart1.title)
+    // .siblings('.artist').text(chart1.artist)
+    // .siblings('.album').text(chart1.album)
+    // $('tbody>tr>td').find('img[alt=2]').parent().siblings('.title').text(chart2.title)
+    // .siblings('.artist').text(chart2.artist)
+    // .siblings('.album').text(chart2.album)
+    // $('tbody>tr>td').find('img[alt=3]').parent().siblings('.title').text(chart3.title)
+    // .siblings('.artist').text(chart3.artist)
+    // .siblings('.album').text(chart3.album)
+    // $('tbody>tr>td').find('img[alt=4]').parent().siblings('.title').text(chart4.title)
+    // .siblings('.artist').text(chart4.artist)
+    // .siblings('.album').text(chart4.album)
+    // $('tbody>tr>td').find('img[alt=5]').parent().siblings('.title').text(chart5.title)
+    // .siblings('.artist').text(chart5.artist)
+    // .siblings('.album').text(chart5.album)
+    // $('tbody>tr>td').find('img[alt=6]').parent().siblings('.title').text(chart6.title)
+    // .siblings('.artist').text(chart6.artist)
+    // .siblings('.album').text(chart6.album)
+    // $('tbody>tr>td').find('img[alt=7]').parent().siblings('.title').text(chart7.title)
+    // .siblings('.artist').text(chart7.artist)
+    // .siblings('.album').text(chart7.album)
+    // $('tbody>tr>td').find('img[alt=8]').parent().siblings('.title').text(chart8.title)
+    // .siblings('.artist').text(chart8.artist)
+    // .siblings('.album').text(chart8.album)
+    // $('tbody>tr>td').find('img[alt=9]').parent().siblings('.title').text(chart9.title)
+    // .siblings('.artist').text(chart9.artist)
+    // .siblings('.album').text(chart9.album)
+    // $('tbody>tr>td').find('img[alt=10]').parent().siblings('.title').text(chart10.title)
+    // .siblings('.artist').text(chart10.artist)
+    // .siblings('.album').text(chart10.album)
     $('.sc ul li').eq(2).css('display','block')
     $('.sc ul li').eq(2).siblings().find('.txt').css('display','none');
     $('.sc ul li').find('img[alt=1]').siblings('.txt').text(chart1.title+' - '+chart1.artist)

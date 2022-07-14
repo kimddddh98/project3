@@ -125,6 +125,12 @@
         display: none;
         background-color: rgba(250, 250, 250, 0.2);
     }
+    .mini_sub>li>a{
+        display: inline-block;
+
+        width: 100%;
+        height: 100%;
+    }
     #down{
         width: 100%;
         height: 20vh;
@@ -358,6 +364,11 @@
     .mini_sub{
         display: none;
         background-color: rgba(250, 250, 250, 0.2);
+    }
+    .mini_sub>li>a{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
     }
     #down{
         width: 100%;
