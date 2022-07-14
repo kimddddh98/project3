@@ -41,6 +41,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
   #slider h2 {
@@ -389,6 +390,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
   #slider h2 {
@@ -584,7 +586,6 @@
     width: 100%;
     margin: 0 auto;
     position: relative;
-    top: -100px;
     overflow: hidden;
   }
   #content > div {
