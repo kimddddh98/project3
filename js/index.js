@@ -232,56 +232,62 @@ $(function () {
     $('#container_m>div').on('click', function () {
         var index = $(this).index()
         $('.fadein').css('display', 'none');
-        $('.fadein').eq(index).slideDown(1000).css('display', 'flex')
-        $(this).css('background', 'rgba(16,16,16,0.8)').
-            siblings().css('background', 'rgba(250,250,250,0.2)')
+        $('.fadein').eq(index).stop().slideDown(1000).css('display', 'flex')
+        $(this).css('background', 'rgba(16,16,16,0.8)')
+        .siblings().css('background', 'rgba(250,250,250,0.2)')
     })
-        .eq(0).css('background', 'rgba(16,16,16,0.8)')
+    $('#container_m>div').eq(0).css('background', 'rgba(16,16,16,0.8)')
 
     // 차트 슬라이드,ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-    for (var i = 1; i < 6; i++) {
-        $('.slider>ul>li').removeClass('item' + i)
-    }
-    $('.slider>ul>li').addClass('item3');
-    $('.item3').eq(2).css('z-index', '4')
+    // for (var i = 1; i < 6; i++) {
+    //     $('.slider>ul>li').removeClass('item' + i)
+    // }
+    // $('.slider>ul>li').addClass('item3');
+    // $('.item3').eq(2).css('z-index', '4')
    
     $('.next').click(function () {
         var x = $('.next').index(this)
-        $('.slider').eq(x).find('li:first').appendTo($('.slider').eq(x).find('ul'))
+        $('.slider').eq(x).find('li:first').stop().appendTo($('.slider').eq(x).find('ul'))
+        $('.slider').eq(x).find('li:last').stop().animate({display:'none'},500,function(){
+            $('.slider').eq(x).find('li:last').animate({display:'block'},500)
+        })
         for (var i = 1; i <= $('.slider').eq(x).find('li').length; i++) {
             $('.slider').eq(x).find('.item' + i).removeClass('item' + i)
             $('.slider').eq(x).find('li').eq(i - 1).toggleClass('item' + i)
             if (i == 2) {
                 $('.slider').eq(x).find('li').eq(i).css('top', '50%')
-                $('.sc ul li').eq(i).find('.txt').fadeIn()
-                $('.sc ul li').eq(i).siblings().find('.txt').css('display','none');
-
-
             }
+
         }
+        // $('.slider').eq(x).find('li:last').css('display','block')
+
+        $('.item3').find($('.txt')).fadeIn()
+        $('.item3').siblings().find($('.txt')).fadeOut();
     })
     $('.sc ul').find('img[alt=1]').prop('src','img/main/chart1.jpg')
     $('.sc ul').find('img[alt=2]').prop('src','img/main/chart2.jpg')
     $('.sc ul').find('img[alt=3]').prop('src','img/main/chart3.jpg')
     $('.sc ul').find('img[alt=4]').prop('src','img/main/chart4.jpg')
     $('.sc ul').find('img[alt=5]').prop('src','img/main/chart5.jpg')
-
     $('.prev').click(function () {
         var y = $('.prev').index(this)
-        $('.slider').eq(y).find('li:last').prependTo($('.slider').eq(y).find('ul'))
+        $('.slider').eq(y).find('li:last').stop().prependTo($('.slider').eq(y).find('ul'))
+        $('.slider').eq(y).find('li:first').stop().animate({display:'none'},500,function(){
+            $('.slider').eq(y).find('li:first').animate({display:'block'},500)
+        })
         for (var i = 1; i <= $('.slider').eq(y).find('li').length; i++) {
             $('.slider').eq(y).find('.item' + i).removeClass('item' + i)
             $('.slider').eq(y).find('li').eq(i - 1).toggleClass('item' + i)
             if (i == 2) {
                 $('.slider').eq(y).find('li').eq(i).css('top', '50%')
-                $('.sc ul li').eq(i).find('.txt').fadeIn()
-                $('.sc ul li').eq(i).siblings().find('.txt').css('display','none');
-
             }
         }
+        $('.item3').find($('.txt')).fadeIn()
+        $('.item3').siblings().find($('.txt')).fadeOut();
+
     })
-
-
+    $('.item3').find($('.txt')).show()
+    $('.item3').siblings().find($('.txt')).hide();
     // #full 호버효과ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     $('#full>div').mouseover(function () {
         $(this).siblings().children('div').css({ width: 0, height: 0 })
@@ -298,22 +304,11 @@ $(function () {
         })
             .end().siblings().children().css({ opacity: 0 })
     })
-    function Chart(title,artist,album){
-        this.title=title;
-        this.artist=artist;
-        this.album=album;
-    }
-    const chart1=new Chart('LOVE DIVE','IVE','LOVE DIVE')
-    const chart2=new Chart('사랑인가봐','멜로망스','사랑인가봐')
-    const chart3=new Chart('정이라고 하자','BIG Naughty','정이라고 하자')
-    const chart4=new Chart('팡파레','다비치','Season Note')
-    const chart5=new Chart('That That','싸이(PSY)','싸다9')
-    const chart6=new Chart('Yet To Come','방탄소년단','Proof')
-    const chart7=new Chart('One More Time','폴킴','star')
-    const chart8=new Chart('봄여름가을겨울','BIGBANG(빅뱅)','봄여름가을겨울')
-    const chart9=new Chart('낭만교향곡','BIG Naughty','낭만')
-    const chart10=new Chart('TOMBOY','(여자)아이들','I NEVER DIE');
-    
+    // function Chart(title,artist,album){
+    //     this.title=title;
+    //     this.artist=artist;
+    //     this.album=album;
+    // }
     $.ajax({
         url:"../js/indexJson.json",
         dataType:"json",
@@ -323,53 +318,14 @@ $(function () {
         for(let i=0;i<data.length;i++){
             $('tbody>tr>td').find(`img[alt=${i+1}]`).parent().siblings('.title').text(data[i].title)
             .siblings('.artist').text(data[i].artist)
-            .siblings('.album').text(data[i].album)
+            .siblings('.album').text(data[i].album);
+            $('.sc ul li').find(`img[alt=${i+1}]`).siblings('.txt').text(data[i].title+' - '+data[i].artist)
+
         }
-        
     })
-    
     // table 복제ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     $('.table').appendTo('.chart');
-    // $('tbody>tr>td').find('img[alt=1]').parent().siblings('.title').text(chart1.title)
-    // .siblings('.artist').text(chart1.artist)
-    // .siblings('.album').text(chart1.album)
-    // $('tbody>tr>td').find('img[alt=2]').parent().siblings('.title').text(chart2.title)
-    // .siblings('.artist').text(chart2.artist)
-    // .siblings('.album').text(chart2.album)
-    // $('tbody>tr>td').find('img[alt=3]').parent().siblings('.title').text(chart3.title)
-    // .siblings('.artist').text(chart3.artist)
-    // .siblings('.album').text(chart3.album)
-    // $('tbody>tr>td').find('img[alt=4]').parent().siblings('.title').text(chart4.title)
-    // .siblings('.artist').text(chart4.artist)
-    // .siblings('.album').text(chart4.album)
-    // $('tbody>tr>td').find('img[alt=5]').parent().siblings('.title').text(chart5.title)
-    // .siblings('.artist').text(chart5.artist)
-    // .siblings('.album').text(chart5.album)
-    // $('tbody>tr>td').find('img[alt=6]').parent().siblings('.title').text(chart6.title)
-    // .siblings('.artist').text(chart6.artist)
-    // .siblings('.album').text(chart6.album)
-    // $('tbody>tr>td').find('img[alt=7]').parent().siblings('.title').text(chart7.title)
-    // .siblings('.artist').text(chart7.artist)
-    // .siblings('.album').text(chart7.album)
-    // $('tbody>tr>td').find('img[alt=8]').parent().siblings('.title').text(chart8.title)
-    // .siblings('.artist').text(chart8.artist)
-    // .siblings('.album').text(chart8.album)
-    // $('tbody>tr>td').find('img[alt=9]').parent().siblings('.title').text(chart9.title)
-    // .siblings('.artist').text(chart9.artist)
-    // .siblings('.album').text(chart9.album)
-    // $('tbody>tr>td').find('img[alt=10]').parent().siblings('.title').text(chart10.title)
-    // .siblings('.artist').text(chart10.artist)
-    // .siblings('.album').text(chart10.album)
-    $('.sc ul li').eq(2).css('display','block')
-    $('.sc ul li').eq(2).siblings().find('.txt').css('display','none');
-    $('.sc ul li').find('img[alt=1]').siblings('.txt').text(chart1.title+' - '+chart1.artist)
-    $('.sc ul li').find('img[alt=2]').siblings('.txt').text(chart2.title+' - '+chart2.artist)
-    $('.sc ul li').find('img[alt=3]').siblings('.txt').text(chart3.title+' - '+chart3.artist)
-    $('.sc ul li').find('img[alt=4]').siblings('.txt').text(chart4.title+' - '+chart4.artist)
-    $('.sc ul li').find('img[alt=5]').siblings('.txt').text(chart5.title+' - '+chart5.artist)
     
-
-
     //pd sliderㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
     setInterval(nn, 5000)
     function nn() {
@@ -410,7 +366,6 @@ $(function () {
         }, 500);
         $('#pd_prev>div:last').prependTo('#pd_prev');
         $('#pd_prev>div').eq(3).append('<div class="aa"></div>')
-
         $('#pd_prev>div').eq(1).append('<div class="bb"></div>')
         $('.bb').click(function () {
             bb();
