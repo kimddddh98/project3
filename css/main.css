@@ -992,7 +992,7 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        bottom: -10%;
+        bottom: -20%;
     }
     #story{
         background-color: #000;
@@ -1133,7 +1133,7 @@
         text-align: center;
         color: #f1f1f1;
         position: absolute;
-        font-size: 5vw;
+        font-size: 3vw;
         bottom: -0%;
     }
     

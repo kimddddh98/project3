@@ -125,9 +125,6 @@ $(function () {
             $('#line p').eq(0).text(VideoText.one.title+' - '+VideoText.one.artist) 
             $('#line p').eq(1).text(VideoText.one.album) 
             bar(parseInt(video1.duration),parseInt(video1.currentTime) );
-           
-
-
         }
         else{
             $('#maincover img').eq(0).prop('src','img/main/videocover.jpg')
@@ -310,7 +307,7 @@ $(function () {
     //     this.album=album;
     // }
     $.ajax({
-        url:"../js/indexJson.json",
+        url:"~/../js/indexJson.json",
         dataType:"json",
     })
     .done(function(data){
@@ -320,7 +317,6 @@ $(function () {
             .siblings('.artist').text(data[i].artist)
             .siblings('.album').text(data[i].album);
             $('.sc ul li').find(`img[alt=${i+1}]`).siblings('.txt').text(data[i].title+' - '+data[i].artist)
-
         }
     })
     // table 복제ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
