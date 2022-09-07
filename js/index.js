@@ -220,11 +220,12 @@ $(function () {
             document.getElementsByClassName('go')[0].style.display='none';
             document.getElementsByClassName('go')[1].style.display='block';
             $('#after').css('width','0')
-
         })
     }
-    document.getElementById('video1').onloadeddata=function(){
-        document.getElementById('video1').play(bar(22,0))
+
+    let video1= document.getElementById('video1')
+    video1.onloadeddata=function(){
+        video1.play(bar(video1.duration,video1.currentTime))
     }
 
     //차트메뉴 슬라이드다운ㅡㅡㅡㅡㅡㅡㅡㅡ
