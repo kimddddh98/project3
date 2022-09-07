@@ -1,7 +1,3 @@
-// window.location.reload=function(){
-//     video1.play(bar(video1.duration,0))
-// }
-
 $(function () {
     let today=new Date();
         let year=today.getFullYear();
